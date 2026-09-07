@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Youtube Adung Commercial — Tải Về Phần Mềm Săn Từ Khóa & Niche Triệu View</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0b0d14;
+            --card-bg: rgba(22, 27, 40, 0.7);
+            --card-border: rgba(255, 255, 255, 0.08);
+            --primary: #ff0055;
+            --primary-glow: rgba(255, 0, 85, 0.4);
+            --cyan: #00e5ff;
+            --cyan-glow: rgba(0, 229, 255, 0.3);
+            --text: #f0f4fc;
+            --text-muted: #8b9bb4;
+            --accent: #7928ca;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 15% 20%, rgba(121, 40, 202, 0.25) 0%, transparent 40%),
+                radial-gradient(circle at 85% 60%, rgba(255, 0, 85, 0.2) 0%, transparent 40%),
+                radial-gradient(circle at 50% 90%, rgba(0, 229, 255, 0.15) 0%, transparent 45%);
+            background-attachment: fixed;
+        }
+
+        .container {
+            max-width: 1160px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* HEADER */
+        header {
+            padding: 24px 0;
+            border-bottom: 1px solid var(--card-border);
+            backdrop-filter: blur(12px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(11, 13, 20, 0.75);
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 20px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .logo-icon {
+            width: 36px;
+            height: 36px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 14px var(--primary-glow);
+            font-weight: 800;
+            font-size: 18px;
+        }
+
+        .badge-ver {
+            font-size: 12px;
+            background: rgba(0, 229, 255, 0.12);
+            color: var(--cyan);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-weight: 600;
+            border: 1px solid rgba(0, 229, 255, 0.3);
+        }
+
+        .btn-header {
+            background: rgba(255, 255, 255, 0.06);
+            color: #fff;
+            padding: 8px 18px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            border: 1px solid var(--card-border);
+            transition: all 0.2s ease;
+        }
+
+        .btn-header:hover {
+            background: rgba(255, 255, 255, 0.12);
+            border-color: rgba(255, 255, 255, 0.25);
+        }
+
+        /* HERO SECTION */
+        .hero {
+            padding: 80px 0 60px;
+            text-align: center;
+        }
+
+        .tagline {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 16px;
+            background: rgba(255, 0, 85, 0.1);
+            color: #ff4d88;
+            border: 1px solid rgba(255, 0, 85, 0.25);
+            border-radius: 30px;
+            font-size: 13px;
+            font-weight: 700;
+            margin-bottom: 24px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .hero h1 {
+            font-size: 52px;
+            font-weight: 800;
+            line-height: 1.15;
+            letter-spacing: -1.5px;
+            margin-bottom: 24px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            background: linear-gradient(180deg, #ffffff 40%, #a5b4fc 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: var(--text-muted);
+            max-width: 680px;
+            margin: 0 auto 40px;
+        }
+
+        /* DOWNLOAD BUTTONS */
+        .cta-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 48px;
+        }
+
+        .btn-download-primary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 14px;
+            background: linear-gradient(135deg, #ff0055 0%, #7928ca 100%);
+            color: #fff;
+            padding: 20px 48px;
+            border-radius: 14px;
+            font-size: 18px;
+            font-weight: 700;
+            text-decoration: none;
+            box-shadow: 0 10px 30px var(--primary-glow);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .btn-download-primary:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 16px 40px rgba(255, 0, 85, 0.6);
+        }
+
+        .btn-download-primary svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        .meta-specs {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        .meta-specs span {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .btn-sub-action {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--cyan);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            padding: 8px 16px;
+            border-radius: 8px;
+            background: rgba(0, 229, 255, 0.08);
+            border: 1px solid rgba(0, 229, 255, 0.2);
+            transition: all 0.2s ease;
+        }
+
+        .btn-sub-action:hover {
+            background: rgba(0, 229, 255, 0.16);
+        }
+
+        /* FEATURES GRID */
+        .features-section {
+            padding: 60px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .section-title h2 {
+            font-size: 32px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            margin-bottom: 12px;
+        }
+
+        .section-title p {
+            color: var(--text-muted);
+            font-size: 16px;
+        }
+
+        .grid-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
+        }
+
+        .card-feat {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            padding: 32px;
+            border-radius: 16px;
+            backdrop-filter: blur(8px);
+            transition: all 0.3s ease;
+        }
+
+        .card-feat:hover {
+            border-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .feat-icon {
+            font-size: 28px;
+            margin-bottom: 16px;
+            display: inline-block;
+        }
+
+        .card-feat h3 {
+            font-size: 19px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+
+        .card-feat p {
+            font-size: 14px;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        /* HOW TO USE STEPS */
+        .steps-section {
+            padding: 60px 0;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 24px;
+            margin: 40px 0;
+            border: 1px solid var(--card-border);
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 24px;
+            padding: 0 24px;
+        }
+
+        .step-box {
+            text-align: center;
+            padding: 24px 16px;
+        }
+
+        .step-num {
+            width: 44px;
+            height: 44px;
+            background: rgba(255, 0, 85, 0.15);
+            color: #ff0055;
+            border: 1px solid rgba(255, 0, 85, 0.3);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            font-weight: 800;
+            margin: 0 auto 16px;
+        }
+
+        .step-box h4 {
+            font-size: 17px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .step-box p {
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        /* FAQ */
+        .faq-section {
+            padding: 60px 0;
+        }
+
+        .faq-item {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 20px 24px;
+            margin-bottom: 14px;
+        }
+
+        .faq-item h4 {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: #fff;
+        }
+
+        .faq-item p {
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        /* FOOTER */
+        footer {
+            padding: 40px 0;
+            border-top: 1px solid var(--card-border);
+            text-align: center;
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 34px; }
+            .hero p { font-size: 15px; }
+            .btn-download-primary { padding: 16px 28px; font-size: 16px; width: 100%; }
+            .meta-specs { flex-direction: column; gap: 8px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">
+                <div class="logo-icon">▶</div>
+                <span>Youtube Adung</span>
+                <span class="badge-ver">v1.0 Commercial</span>
+            </a>
+            <div>
+                <a href="https://zalo.me" target="_blank" class="btn-header">💬 Liên Hệ Admin</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="container">
+            <div class="tagline">⚡ Bản Thương Mại Độc Quyền Cho Creator & MMO</div>
+            <h1>Bứt Phá Kênh Triệu View Với Công Cụ Săn Niche & Từ Khóa Thông Minh</h1>
+            <p>Khám phá 110 ngách tiềm năng không lộ mặt, truy lùng từ khóa ít cạnh tranh, soi kênh đối thủ và xuất báo cáo dữ liệu YouTube thời gian thực.</p>
+
+            <div class="cta-box">
+                <!-- Nút Tải Về Trực Tiếp: Anh chỉ cần điền link file zip vào thuộc tính href bên dưới -->
+                <a id="download-btn" href="Youtube_Adung_Commercial_v1.0.zip" class="btn-download-primary" download>
+                    <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3"></path>
+                    </svg>
+                    TẢI VỀ CHO WINDOWS (64-BIT)
+                </a>
+
+                <div class="meta-specs">
+                    <span>📦 Dung lượng: <strong>87.5 MB (.zip)</strong></span>
+                    <span>•</span>
+                    <span>💻 Windows 10 & 11 (64-bit)</span>
+                    <span>•</span>
+                    <span>🚀 Bản Portable (Giải nén dùng ngay)</span>
+                </div>
+
+                <div style="margin-top: 10px;">
+                    <a href="https://zalo.me" target="_blank" class="btn-sub-action">
+                        🔑 Chưa có tài khoản? Nhắn tin kích hoạt ngay
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="features-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Vũ Khí Săn Đề Xuất Toàn Diện</h2>
+                <p>Được thiết kế tinh gọn, siêu nhẹ, vận hành mượt mà trên máy tính của bạn.</p>
+            </div>
+
+            <div class="grid-features">
+                <div class="card-feat">
+                    <div class="feat-icon">🎯</div>
+                    <h3>110+ Chủ Đề Ngách Tiềm Năng</h3>
+                    <p>Kho danh mục ngách làm video Faceless (không lộ mặt) được phân loại khoa học: Tài chính, Tâm lý, Lịch sử, Anime, Bí ẩn, Công nghệ...</p>
+                </div>
+                <div class="card-feat">
+                    <div class="feat-icon">🔍</div>
+                    <h3>Keyword Hunter Triệu View</h3>
+                    <p>Truy quét các cụm từ khóa có lượng tìm kiếm cao nhưng ít cạnh tranh, gợi ý tiêu đề dễ ăn đề xuất của YouTube Search & Browse.</p>
+                </div>
+                <div class="card-feat">
+                    <div class="feat-icon">🕵️</div>
+                    <h3>Competitor Spy & Watchlist</h3>
+                    <p>Theo dõi sát sao kênh của đối thủ cùng ngách, phân tích video nào đang bứt phá view đột biến để bắt chước ý tưởng thành công.</p>
+                </div>
+                <div class="card-feat">
+                    <div class="feat-icon">📊</div>
+                    <h3>Google Trends & Niche Snapshot</h3>
+                    <p>Bắt trọn xu hướng tìm kiếm nóng hổi theo thời gian thực tại Việt Nam và toàn cầu, không bao giờ lo cạn kiệt ý tưởng làm video.</p>
+                </div>
+                <div class="card-feat">
+                    <div class="feat-icon">📑</div>
+                    <h3>Xuất Báo Cáo Excel 1 Chạm</h3>
+                    <p>Dễ dàng trích xuất toàn bộ dữ liệu từ khóa, danh sách video đối thủ, bảng điểm đánh giá ra file Excel chuyên nghiệp để làm việc nhóm.</p>
+                </div>
+                <div class="card-feat">
+                    <div class="feat-icon">⚡</div>
+                    <h3>Siêu Nhẹ & Riêng Tư Tuyệt Đối</h3>
+                    <p>Dung lượng chỉ ~87 MB, không cài thêm phần mềm rác. Dữ liệu chạy hoàn toàn bằng IP sạch của bạn, chống bị YouTube giới hạn.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3 STEPS -->
+    <section class="container">
+        <div class="steps-section">
+            <div class="section-title" style="margin-bottom: 32px;">
+                <h2>3 Bước Sử Dụng Đơn Giản</h2>
+                <p>Không cần biết lập trình, không cần cài đặt môi trường phức tạp.</p>
+            </div>
+            <div class="steps-grid">
+                <div class="step-box">
+                    <div class="step-num">1</div>
+                    <h4>Tải Bản Nén (.zip)</h4>
+                    <p>Bấm nút tải về file <code>Youtube_Adung_Commercial_v1.0.zip</code> (87 MB) về máy tính của bạn.</p>
+                </div>
+                <div class="step-box">
+                    <div class="step-num">2</div>
+                    <h4>Giải Nén Thư Mục</h4>
+                    <p>Chuột phải vào file vừa tải, chọn <strong>Extract All... (Giải nén)</strong> ra một thư mục bất kỳ.</p>
+                </div>
+                <div class="step-box">
+                    <div class="step-num">3</div>
+                    <h4>Mở & Đăng Nhập</h4>
+                    <p>Click đúp file <code>Youtube_Adung_Commercial_v1.0.exe</code>, nhập Email & Mật khẩu bản quyền để bắt đầu!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq-section">
+        <div class="container" style="max-width: 800px;">
+            <div class="section-title">
+                <h2>Câu Hỏi Thường Gặp</h2>
+            </div>
+            <div class="faq-item">
+                <h4>Tôi có cần phải cài đặt Python hay thư viện gì không?</h4>
+                <p>Hoàn toàn không. Ứng dụng đã được đóng gói độc lập (Standalone). Bạn chỉ cần tải về, giải nén và mở lên dùng ngay.</p>
+            </div>
+            <div class="faq-item">
+                <h4>Phần mềm chạy được trên những hệ điều hành nào?</h4>
+                <p>Hỗ trợ tối ưu trên Windows 10 và Windows 11 (phiên bản 64-bit).</p>
+            </div>
+            <div class="faq-item">
+                <h4>Làm sao để có tài khoản đăng nhập bản quyền?</h4>
+                <p>Hãy bấm vào nút "Liên Hệ Admin" ở góc phải màn hình hoặc nhắn tin qua Zalo/Telegram để được cấp tài khoản kích hoạt theo tuần, tháng hoặc năm.</p>
+            </div>
+            <div class="faq-item">
+                <h4>Tôi có thể dùng trên nhiều máy tính cùng lúc không?</h4>
+                <p>Mỗi tài khoản được gắn cố định với mã phần cứng (HWID) của 1 thiết bị để đảm bảo tính riêng tư và ổn định. Nếu đổi máy tính mới, hãy nhắn tin Admin để reset mã máy miễn phí.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <p>© 2026 Youtube Adung Commercial. All rights reserved.</p>
+            <p style="margin-top: 6px; font-size: 12px; color: #55627a;">Sản phẩm được bảo vệ bản quyền SaaS & chống dịch ngược bởi hệ thống Adung Security Shield.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Tự động kiểm tra nếu có query link tải direct
+        const urlParams = new URLSearchParams(window.location.search);
+        const customDownloadUrl = urlParams.get('dl');
+        if (customDownloadUrl) {
+            document.getElementById('download-btn').setAttribute('href', customDownloadUrl);
+        }
+    </script>
+</body>
+</html>
