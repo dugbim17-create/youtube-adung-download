@@ -156,19 +156,22 @@
         .header-actions {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
+            flex-shrink: 0;
         }
 
         .btn-contact-header {
             display: inline-flex;
             align-items: center;
             gap: 6px;
-            padding: 8px 16px;
+            padding: 8px 14px;
             border-radius: 8px;
             text-decoration: none;
             font-weight: 600;
             font-size: 13px;
             transition: all 0.2s ease;
+            white-space: nowrap;
+            flex-shrink: 0;
         }
 
         .btn-zalo-header {
@@ -199,14 +202,15 @@
             border-radius: 30px;
             border: 1px solid rgba(255, 255, 255, 0.08);
             backdrop-filter: blur(10px);
+            flex-shrink: 0;
         }
 
         .nav-link {
             color: #94a3b8;
             text-decoration: none;
-            font-size: 13.5px;
+            font-size: 13px;
             font-weight: 600;
-            padding: 6px 14px;
+            padding: 6px 13px;
             border-radius: 20px;
             transition: all 0.2s ease;
             white-space: nowrap;
@@ -227,22 +231,31 @@
         .btn-download-quick {
             display: inline-flex;
             align-items: center;
-            gap: 6px;
+            justify-content: center;
+            gap: 7px;
             padding: 8px 16px;
-            border-radius: 8px;
+            border-radius: 9px;
             text-decoration: none;
             font-weight: 700;
             font-size: 13px;
             color: #fff;
             background: linear-gradient(135deg, #ff0055 0%, #7928ca 100%);
-            box-shadow: 0 3px 12px rgba(255, 0, 85, 0.3);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            transition: all 0.2s ease;
+            box-shadow: 0 3px 12px rgba(255, 0, 85, 0.35);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.25s ease;
+            white-space: nowrap;
+            flex-shrink: 0;
+            line-height: 1;
+        }
+
+        .btn-download-quick svg {
+            flex-shrink: 0;
         }
 
         .btn-download-quick:hover {
             transform: translateY(-1px);
-            box-shadow: 0 5px 16px rgba(255, 0, 85, 0.45);
+            box-shadow: 0 5px 18px rgba(255, 0, 85, 0.5);
+            background: linear-gradient(135deg, #ff1a6b 0%, #8a38dc 100%);
         }
 
         .mobile-quick-nav {
@@ -970,7 +983,10 @@
 
             <div class="header-actions">
                 <a href="#download" class="btn-download-quick">
-                    ⬇️ Tải Về
+                    <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3"></path>
+                    </svg>
+                    <span>Tải Về Ngay</span>
                 </a>
                 <a href="https://zalo.me/0397176893" target="_blank" class="btn-contact-header btn-zalo-header">
                     💬 Zalo: 0397.176.893
@@ -989,7 +1005,12 @@
         <a href="#bang-gia" class="nav-link">🏷️ Bảng Giá</a>
         <a href="#huong-dan" class="nav-link">🚀 Cài Đặt</a>
         <a href="#faq" class="nav-link">❓ FAQ</a>
-        <a href="#download" class="nav-link nav-link-dl">⬇️ Tải Về</a>
+        <a href="#download" class="nav-link nav-link-dl">
+            <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" style="display:inline-block; vertical-align:middle; margin-right:3px;">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3"></path>
+            </svg>
+            Tải Về
+        </a>
     </nav>
 
     <!-- HERO SECTION -->
