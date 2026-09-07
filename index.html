@@ -69,34 +69,80 @@
         .logo {
             display: flex;
             align-items: center;
-            gap: 12px;
-            font-size: 20px;
-            font-weight: 800;
+            gap: 14px;
             text-decoration: none;
             color: #fff;
+            transition: all 0.25s ease;
         }
 
-        .logo-icon {
-            width: 38px;
-            height: 38px;
-            background: linear-gradient(135deg, var(--primary), var(--accent));
-            border-radius: 10px;
+        .logo:hover .logo-img {
+            transform: scale(1.06);
+            box-shadow: 0 6px 20px rgba(255, 0, 85, 0.45);
+        }
+
+        .logo-img {
+            width: 42px;
+            height: 42px;
+            border-radius: 11px;
+            object-fit: cover;
+            display: block;
+            box-shadow: 0 4px 14px rgba(255, 0, 85, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            transition: all 0.25s ease;
+        }
+
+        .logo-text-group {
             display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 14px var(--primary-glow);
+            flex-direction: column;
+        }
+
+        .logo-brand {
+            font-size: 19px;
             font-weight: 800;
-            font-size: 18px;
+            letter-spacing: -0.4px;
+            color: #ffffff;
+            line-height: 1.2;
+        }
+
+        .logo-brand span {
+            color: #ff0055;
+        }
+
+        .logo-tagline {
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--text-muted);
+            letter-spacing: 0.2px;
+            margin-top: 2px;
         }
 
         .badge-ver {
-            font-size: 12px;
-            background: rgba(0, 229, 255, 0.12);
-            color: var(--cyan);
-            padding: 3px 10px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 11.5px;
+            background: rgba(16, 185, 129, 0.1);
+            color: #34d399;
+            padding: 4px 11px;
             border-radius: 20px;
             font-weight: 600;
-            border: 1px solid rgba(0, 229, 255, 0.25);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            margin-left: 6px;
+        }
+
+        .badge-dot {
+            width: 6.5px;
+            height: 6.5px;
+            background: #10b981;
+            border-radius: 50%;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse-green 2s infinite;
+        }
+
+        @keyframes pulse-green {
+            0% { transform: scale(0.95); opacity: 0.8; }
+            50% { transform: scale(1.2); opacity: 1; box-shadow: 0 0 12px #10b981; }
+            100% { transform: scale(0.95); opacity: 0.8; }
         }
 
         .header-actions {
@@ -629,9 +675,15 @@
     <header>
         <div class="container nav-wrapper">
             <a href="#" class="logo">
-                <div class="logo-icon">▶</div>
-                <span>Youtube Adung</span>
-                <span class="badge-ver">v1.0 Commercial</span>
+                <img src="assets/app_icon.png" alt="YouTube Adung Logo" class="logo-img">
+                <div class="logo-text-group">
+                    <div class="logo-brand">YouTube <span>Adung</span></div>
+                    <div class="logo-tagline">Nghiên Cứu &amp; Phân Tích Nội Dung</div>
+                </div>
+                <span class="badge-ver">
+                    <span class="badge-dot"></span>
+                    Official Release v1.0
+                </span>
             </a>
             <div class="header-actions">
                 <a href="https://zalo.me/0397176893" target="_blank" class="btn-contact-header btn-zalo-header">
