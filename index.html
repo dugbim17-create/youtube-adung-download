@@ -552,6 +552,181 @@
             border-right: 1px solid rgba(0, 229, 255, 0.15);
         }
 
+        /* PRICING SECTION */
+        .pricing-section {
+            padding: 60px 0;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 22px;
+            margin-top: 36px;
+        }
+
+        .pricing-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 18px;
+            padding: 30px 24px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(255, 255, 255, 0.22);
+            box-shadow: 0 16px 36px rgba(0, 0, 0, 0.4);
+        }
+
+        .pricing-card.featured {
+            background: linear-gradient(180deg, rgba(255, 0, 85, 0.08) 0%, rgba(18, 22, 34, 0.85) 100%);
+            border: 1px solid rgba(255, 0, 85, 0.35);
+            box-shadow: 0 10px 30px rgba(255, 0, 85, 0.15);
+        }
+
+        .pricing-card.featured:hover {
+            border-color: rgba(255, 0, 85, 0.6);
+            box-shadow: 0 18px 45px rgba(255, 0, 85, 0.25);
+        }
+
+        .card-pill-tag {
+            align-self: flex-start;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 14px;
+        }
+
+        .pill-gray { background: rgba(255, 255, 255, 0.06); color: #cbd5e1; border: 1px solid rgba(255, 255, 255, 0.12); }
+        .pill-hot { background: rgba(255, 0, 85, 0.2); color: #ff3377; border: 1px solid rgba(255, 0, 85, 0.4); }
+        .pill-save { background: rgba(245, 158, 11, 0.15); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.3); }
+        .pill-vip { background: rgba(121, 40, 202, 0.2); color: #c084fc; border: 1px solid rgba(121, 40, 202, 0.35); }
+
+        .pricing-title {
+            font-size: 19px;
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 6px;
+        }
+
+        .pricing-price-box {
+            margin: 16px 0 12px;
+            display: flex;
+            align-items: baseline;
+            gap: 6px;
+        }
+
+        .pricing-price {
+            font-size: 34px;
+            font-weight: 800;
+            color: #fff;
+            letter-spacing: -0.5px;
+        }
+
+        .pricing-price.text-lg {
+            font-size: 28px;
+            color: #c084fc;
+        }
+
+        .pricing-period {
+            font-size: 13px;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .pricing-subnote {
+            font-size: 12.5px;
+            color: #38bdf8;
+            margin-bottom: 22px;
+            font-weight: 600;
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin-bottom: 26px;
+            flex-grow: 1;
+        }
+
+        .pricing-features li {
+            font-size: 13.5px;
+            color: #cbd5e1;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            line-height: 1.5;
+        }
+
+        .pricing-features li::before {
+            content: "✓";
+            color: #10b981;
+            font-weight: 800;
+        }
+
+        .btn-pricing {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 18px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 14px;
+            text-align: center;
+            transition: all 0.2s ease;
+            width: 100%;
+        }
+
+        .btn-pricing-default {
+            background: rgba(255, 255, 255, 0.08);
+            color: #fff;
+            border: 1px solid var(--card-border);
+        }
+
+        .btn-pricing-default:hover {
+            background: rgba(255, 255, 255, 0.16);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .btn-pricing-hot {
+            background: linear-gradient(135deg, #ff0055 0%, #7928ca 100%);
+            color: #fff;
+            box-shadow: 0 4px 15px rgba(255, 0, 85, 0.35);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .btn-pricing-hot:hover {
+            transform: scale(1.02);
+            box-shadow: 0 6px 20px rgba(255, 0, 85, 0.5);
+        }
+
+        .trial-callout {
+            background: rgba(16, 185, 129, 0.08);
+            border: 1px solid rgba(16, 185, 129, 0.25);
+            border-radius: 14px;
+            padding: 16px 24px;
+            text-align: center;
+            margin-top: 30px;
+            font-size: 14.5px;
+            color: #a7f3d0;
+        }
+
+        .trial-callout strong {
+            color: #fff;
+        }
+
+        .trial-callout a {
+            color: var(--cyan);
+            text-decoration: underline;
+            font-weight: 700;
+        }
+
         /* 3 STEPS */
         .steps-section {
             padding: 50px 0;
@@ -984,6 +1159,105 @@
                     </tbody>
                 </table>
             </div>
+        </div>
+    </section>
+
+    <!-- PRICING SECTION -->
+    <section class="container pricing-section">
+        <div class="section-header">
+            <span class="sub-badge">CHI PHÍ ĐẦU TƯ TIẾT KIỆM</span>
+            <h2>Bảng Giá Linh Hoạt &amp; Hợp Lý Cho Creator</h2>
+            <p>Tất cả các gói đều có quyền sử dụng trọn vẹn 100% tính năng phân tích &amp; bóc kịch bản. Tặng 3 ngày trải nghiệm miễn phí để bạn kiểm chứng hiệu quả trước khi kích hoạt.</p>
+        </div>
+
+        <div class="pricing-grid">
+            <!-- GÓI 1: TUẦN -->
+            <div class="pricing-card">
+                <span class="card-pill-tag pill-gray">Trải Nghiệm Nhanh</span>
+                <div class="pricing-title">Gói Tuần</div>
+                <div class="pricing-price-box">
+                    <span class="pricing-price">49.000đ</span>
+                    <span class="pricing-period">/ 7 ngày</span>
+                </div>
+                <div class="pricing-subnote">~7.000đ / ngày (Bằng 1 bát phở)</div>
+                <ul class="pricing-features">
+                    <li>Sử dụng đầy đủ 100% tính năng cao cấp</li>
+                    <li>Bóc kịch bản &amp; phụ đề video không giới hạn</li>
+                    <li>Bộ lọc kênh mới &amp; phát hiện video đột biến</li>
+                    <li>Gợi ý 65+ ngách Faceless &amp; từ khóa quốc tế</li>
+                    <li>Kích hoạt dùng ngay trong 5 phút</li>
+                </ul>
+                <a href="https://zalo.me/0397176893?text=Chào%20Admin,%20mình%20muốn%20đăng%20ký%20Gói%20Tuần%2049k%20của%20tool%20YouTube%20Adung" target="_blank" class="btn-pricing btn-pricing-default">
+                    Đăng Ký Gói Tuần
+                </a>
+            </div>
+
+            <!-- GÓI 2: THÁNG (BÁN CHẠY NHẤT) -->
+            <div class="pricing-card featured">
+                <span class="card-pill-tag pill-hot">🔥 Được Chọn Nhiều Nhất</span>
+                <div class="pricing-title">Gói Tháng</div>
+                <div class="pricing-price-box">
+                    <span class="pricing-price">149.000đ</span>
+                    <span class="pricing-period">/ 30 ngày</span>
+                </div>
+                <div class="pricing-subnote">Chỉ ~5.000đ / ngày (Bằng 2 cốc trà đá)</div>
+                <ul class="pricing-features">
+                    <li>Sử dụng đầy đủ 100% tính năng cao cấp</li>
+                    <li>Bóc kịch bản, lời thoại video không giới hạn</li>
+                    <li>Khám phá ngách Faceless, từ khóa song ngữ</li>
+                    <li>Quét xu hướng Trending toàn cầu &amp; Google Trends</li>
+                    <li>Cập nhật các bản vá &amp; tối ưu mới trong 30 ngày</li>
+                    <li>Hỗ trợ trực tiếp 1-1 qua Zalo &amp; Telegram</li>
+                </ul>
+                <a href="https://zalo.me/0397176893?text=Chào%20Admin,%20mình%20muốn%20đăng%20ký%20Gói%20Tháng%20149k%20của%20tool%20YouTube%20Adung" target="_blank" class="btn-pricing btn-pricing-hot">
+                    Đăng Ký Gói Tháng
+                </a>
+            </div>
+
+            <!-- GÓI 3: NĂM (TIẾT KIỆM NHẤT) -->
+            <div class="pricing-card">
+                <span class="card-pill-tag pill-save">⭐ Tiết Kiệm 55%</span>
+                <div class="pricing-title">Gói 1 Năm</div>
+                <div class="pricing-price-box">
+                    <span class="pricing-price">790.000đ</span>
+                    <span class="pricing-period">/ 12 tháng</span>
+                </div>
+                <div class="pricing-subnote">Chỉ ~65.000đ / tháng (Chưa tới 1 triệu)</div>
+                <ul class="pricing-features">
+                    <li>Tiết kiệm hơn 55% so với duy trì từng tháng</li>
+                    <li>Toàn quyền sử dụng &amp; cập nhật trọn vẹn 12 tháng</li>
+                    <li>Hỗ trợ đổi mã máy (HWID) miễn phí khi đổi máy tính</li>
+                    <li>Xuất báo cáo dữ liệu Excel chuyên sâu không giới hạn</li>
+                    <li>Ưu tiên hỗ trợ kỹ thuật 1-1 từ Admin</li>
+                </ul>
+                <a href="https://zalo.me/0397176893?text=Chào%20Admin,%20mình%20muốn%20đăng%20ký%20Gói%20Năm%20790k%20của%20tool%20YouTube%20Adung" target="_blank" class="btn-pricing btn-pricing-default">
+                    Đăng Ký Gói Năm
+                </a>
+            </div>
+
+            <!-- GÓI 4: VĨNH VIỄN (STUDIO / ĐỘI NHÓM) -->
+            <div class="pricing-card">
+                <span class="card-pill-tag pill-vip">🏢 Studio &amp; Đội Nhóm</span>
+                <div class="pricing-title">Gói Vĩnh Viễn</div>
+                <div class="pricing-price-box">
+                    <span class="pricing-price text-lg">Liên Hệ</span>
+                    <span class="pricing-period">/ Trọn đời</span>
+                </div>
+                <div class="pricing-subnote">Báo giá theo nhu cầu &amp; số lượng máy</div>
+                <ul class="pricing-features">
+                    <li>Sở hữu bản quyền trọn đời, không lo gia hạn</li>
+                    <li>Giải pháp linh hoạt cho cá nhân hoặc Studio nhiều máy</li>
+                    <li>Được cấp quyền cập nhật các phiên bản lớn trong tương lai</li>
+                    <li>Chính sách hỗ trợ riêng biệt cho đội nhóm sản xuất</li>
+                </ul>
+                <a href="https://zalo.me/0397176893?text=Chào%20Admin,%20mình%20muốn%20tư%20vấn%20Gói%20Vĩnh%20Viễn%20cho%20đội%20nhóm%20tool%20YouTube%20Adung" target="_blank" class="btn-pricing btn-pricing-default">
+                    Liên Hệ Báo Giá
+                </a>
+            </div>
+        </div>
+
+        <div class="trial-callout">
+            🎁 <strong>Bạn vẫn còn băn khoăn?</strong> Hãy nhắn tin cho Admin qua Zalo <a href="https://zalo.me/0397176893" target="_blank">0397.176.893</a> hoặc Telegram <a href="https://t.me/SHIB_GOD68" target="_blank">@SHIB_GOD68</a> để nhận ngay mã kích hoạt <strong>DÙNG THỬ 3 NGÀY MIỄN PHÍ</strong> trước khi thanh toán!
         </div>
     </section>
 
