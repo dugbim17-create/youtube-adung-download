@@ -953,6 +953,260 @@
             .weapon-item:nth-child(even) .weapon-info { order: 1; }
             .weapon-item:nth-child(even) .weapon-frame { order: 2; }
         }
+
+        /* VOICE STUDIO LEAD MAGNET SECTION */
+        .nav-link-voice {
+            color: #c084fc !important;
+            display: inline-flex !important;
+            align-items: center;
+            gap: 4px;
+        }
+        .nav-link-voice:hover {
+            color: #e879f9 !important;
+            background: rgba(192, 132, 252, 0.1) !important;
+        }
+        .nav-free-badge {
+            font-size: 9.5px;
+            font-weight: 700;
+            background: rgba(16, 185, 129, 0.2);
+            color: #34d399;
+            border: 1px solid rgba(16, 185, 129, 0.4);
+            padding: 1px 5px;
+            border-radius: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            line-height: 1.2;
+        }
+        .voice-section {
+            padding: 50px 0 60px;
+        }
+        .voice-box {
+            background: linear-gradient(145deg, rgba(22, 18, 38, 0.88) 0%, rgba(12, 15, 26, 0.94) 100%);
+            border: 1px solid rgba(168, 85, 247, 0.28);
+            border-radius: 20px;
+            padding: 38px 40px;
+            position: relative;
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45), 0 0 35px rgba(168, 85, 247, 0.08);
+            overflow: hidden;
+        }
+        .voice-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #a855f7 0%, #00e5ff 100%);
+        }
+        .voice-badge-strip {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        .voice-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(168, 85, 247, 0.15);
+            color: #c084fc;
+            border: 1px solid rgba(168, 85, 247, 0.35);
+            padding: 5px 13px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.3px;
+        }
+        .voice-badge-tag {
+            font-size: 11.5px;
+            color: var(--text-muted);
+            background: rgba(255, 255, 255, 0.05);
+            padding: 4px 10px;
+            border-radius: 6px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .voice-grid {
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            gap: 36px;
+            align-items: start;
+        }
+        .voice-info h2 {
+            font-size: 25px;
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 12px;
+            line-height: 1.35;
+        }
+        .voice-lead {
+            font-size: 14px;
+            color: #cbd5e1;
+            line-height: 1.6;
+            margin-bottom: 22px;
+        }
+        .voice-features-list {
+            display: flex;
+            flex-direction: column;
+            gap: 13px;
+        }
+        .v-feat-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            font-size: 13.5px;
+            line-height: 1.5;
+            color: #94a3b8;
+        }
+        .v-feat-icon {
+            font-size: 17px;
+            line-height: 1;
+            padding-top: 2px;
+            flex-shrink: 0;
+        }
+        .v-feat-item strong {
+            color: #f1f5f9;
+        }
+        .v-feat-item em {
+            color: var(--cyan);
+            font-style: normal;
+            font-weight: 600;
+        }
+        .voice-action-card {
+            background: rgba(10, 12, 20, 0.72);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        .vac-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .vac-title {
+            font-size: 15.5px;
+            font-weight: 700;
+            color: #fff;
+        }
+        .vac-badge {
+            font-size: 11px;
+            font-weight: 700;
+            background: rgba(16, 185, 129, 0.15);
+            color: #34d399;
+            border: 1px solid rgba(16, 185, 129, 0.35);
+            padding: 3px 10px;
+            border-radius: 12px;
+            text-transform: uppercase;
+        }
+        .vac-specs {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.025);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 12px 14px;
+            font-size: 12.5px;
+        }
+        .vac-spec-row {
+            display: flex;
+            justify-content: space-between;
+            color: var(--text-muted);
+        }
+        .vac-spec-row strong, .vac-spec-row span:last-child {
+            color: #e2e8f0;
+        }
+        .btn-download-voice {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background: linear-gradient(135deg, #9333ea 0%, #4f46e5 100%);
+            color: #fff;
+            text-decoration: none;
+            font-size: 13.5px;
+            font-weight: 700;
+            padding: 12px 18px;
+            border-radius: 9px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 4px 14px rgba(147, 51, 234, 0.35);
+            transition: all 0.25s ease;
+            text-align: center;
+        }
+        .btn-download-voice:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 6px 20px rgba(147, 51, 234, 0.5);
+            background: linear-gradient(135deg, #a855f7 0%, #6366f1 100%);
+        }
+        .vac-key-guide {
+            background: rgba(255, 255, 255, 0.02);
+            border-top: 1px dashed rgba(255, 255, 255, 0.08);
+            padding-top: 13px;
+            font-size: 12.5px;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+        .guide-heading {
+            font-weight: 700;
+            color: #f1f5f9;
+            margin-bottom: 5px;
+        }
+        .vac-contacts {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            margin-top: 11px;
+        }
+        .vac-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            padding: 7px 10px;
+            border-radius: 8px;
+            font-size: 12px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            text-align: center;
+        }
+        .vac-zalo {
+            background: rgba(0, 104, 255, 0.15);
+            color: #38bdf8;
+            border: 1px solid rgba(0, 104, 255, 0.35);
+        }
+        .vac-zalo:hover {
+            background: rgba(0, 104, 255, 0.28);
+        }
+        .vac-tele {
+            background: rgba(34, 158, 217, 0.15);
+            color: #67e8f9;
+            border: 1px solid rgba(34, 158, 217, 0.35);
+        }
+        .vac-tele:hover {
+            background: rgba(34, 158, 217, 0.28);
+        }
+
+        @media (max-width: 900px) {
+            .voice-grid {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+            .voice-box {
+                padding: 24px;
+            }
+            .voice-info h2 {
+                font-size: 21px;
+            }
+            .mobile-quick-nav .nav-link-voice {
+                color: #c084fc;
+                background: rgba(192, 132, 252, 0.1);
+                border: 1px solid rgba(192, 132, 252, 0.25);
+            }
+        }
     </style>
 </head>
 <body>
@@ -977,6 +1231,7 @@
                 <a href="#tinh-nang" class="nav-link">✨ Tính Năng</a>
                 <a href="#so-sanh" class="nav-link">⚖️ So Sánh</a>
                 <a href="#bang-gia" class="nav-link">🏷️ Bảng Giá</a>
+                <a href="#voice-studio" class="nav-link nav-link-voice">🎙️ Voice Studio <span class="nav-free-badge">Free</span></a>
                 <a href="#huong-dan" class="nav-link">🚀 Cài Đặt</a>
                 <a href="#faq" class="nav-link">❓ FAQ</a>
             </nav>
@@ -1003,6 +1258,7 @@
         <a href="#tinh-nang" class="nav-link">✨ Tính Năng</a>
         <a href="#so-sanh" class="nav-link">⚖️ So Sánh</a>
         <a href="#bang-gia" class="nav-link">🏷️ Bảng Giá</a>
+        <a href="#voice-studio" class="nav-link nav-link-voice">🎙️ Voice Studio (Free)</a>
         <a href="#huong-dan" class="nav-link">🚀 Cài Đặt</a>
         <a href="#faq" class="nav-link">❓ FAQ</a>
         <a href="#download" class="nav-link nav-link-dl">
@@ -1400,6 +1656,100 @@
 
         <div class="trial-callout">
             🎁 <strong>Bạn vẫn còn băn khoăn?</strong> Hãy nhắn tin cho Admin qua Zalo <a href="https://zalo.me/0397176893" target="_blank">0397.176.893</a> hoặc Telegram <a href="https://t.me/SHIB_GOD68" target="_blank">@SHIB_GOD68</a> để nhận ngay mã kích hoạt <strong>DÙNG THỬ 3 NGÀY MIỄN PHÍ</strong> trước khi thanh toán!
+        </div>
+    </section>
+
+    <!-- VOICE STUDIO FREE LEAD MAGNET SECTION -->
+    <section class="container voice-section" id="voice-studio">
+        <div class="voice-box">
+            <div class="voice-badge-strip">
+                <span class="voice-badge">🎙️ CÔNG CỤ BỔ TRỢ MIỄN PHÍ</span>
+                <span class="voice-badge-tag">Offline Standalone</span>
+            </div>
+            <div class="voice-grid">
+                <div class="voice-info">
+                    <h2>Voice Studio — Tạo Giọng Đọc AI Offline Cho Creator</h2>
+                    <p class="voice-lead">
+                        Công cụ lồng tiếng AI chạy trực tiếp trên máy tính, giúp bạn biến kịch bản vừa nghiên cứu thành file audio thuyết minh mượt mà. Hoạt động offline 100%, không tốn chi phí API và không giới hạn số lượng ký tự.
+                    </p>
+
+                    <div class="voice-features-list">
+                        <div class="v-feat-item">
+                            <span class="v-feat-icon">🎙️</span>
+                            <div>
+                                <strong>Giọng đọc tiếng Việt tự nhiên:</strong>
+                                <span>Tích hợp sẵn các giọng đọc được yêu thích (chú Nguyễn Ngọc Ngạn kể chuyện, giọng đọc tin tức - tài liệu Bắc &amp; Nam).</span>
+                            </div>
+                        </div>
+                        <div class="v-feat-item">
+                            <span class="v-feat-icon">⚡</span>
+                            <div>
+                                <strong>Chạy mượt trên CPU máy tính:</strong>
+                                <span>Tối ưu hóa bằng động cơ ONNX Runtime, không đòi hỏi card đồ họa rời (GPU), xuất file WAV / MP3 tốc độ cao.</span>
+                            </div>
+                        </div>
+                        <div class="v-feat-item">
+                            <span class="v-feat-icon">♾️</span>
+                            <div>
+                                <strong>Đọc kịch bản dài không giới hạn:</strong>
+                                <span>Xử lý tốt các văn bản dài từ 3.000 đến 18.000 từ, tự động tách câu thông minh và căn chỉnh ngắt nghỉ.</span>
+                            </div>
+                        </div>
+                        <div class="v-feat-item">
+                            <span class="v-feat-icon">🔗</span>
+                            <div>
+                                <strong>Nút kết nối nhanh với YouTube Adung:</strong>
+                                <span>Bóc tách phụ đề video triệu view từ công cụ phía trên, sau đó bấm <em>"Nhập từ YouTube Adung"</em> để tạo giọng đọc tự động.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="voice-action-card">
+                    <div class="vac-header">
+                        <div class="vac-title">Tải Về Bản Portable</div>
+                        <div class="vac-badge">Miễn Phí</div>
+                    </div>
+                    <div class="vac-specs">
+                        <div class="vac-spec-row">
+                            <span>📦 File nén:</span>
+                            <strong>Voice_Studio_v1.0.zip</strong>
+                        </div>
+                        <div class="vac-spec-row">
+                            <span>💾 Dung lượng:</span>
+                            <span>~280 MB (Đã kèm model)</span>
+                        </div>
+                        <div class="vac-spec-row">
+                            <span>💻 Hệ điều hành:</span>
+                            <span>Windows 10 / 11 (64-bit)</span>
+                        </div>
+                        <div class="vac-spec-row">
+                            <span>🚀 Sử dụng:</span>
+                            <span>Giải nén click là chạy</span>
+                        </div>
+                    </div>
+
+                    <a href="https://github.com/dugbim17-create/youtube-adung-download/releases/download/v1.0/Voice_Studio_v1.0.zip" class="btn-download-voice" id="btnDownloadVoice">
+                        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3"></path>
+                        </svg>
+                        <span>TẢI VOICE STUDIO (BẢN MIỄN PHÍ)</span>
+                    </a>
+
+                    <div class="vac-key-guide">
+                        <div class="guide-heading">🔑 Cách nhận mã kích hoạt bản quyền miễn phí:</div>
+                        <p>Sau khi mở phần mềm, bạn chỉ cần copy <strong>Mã máy (Machine ID)</strong> trên màn hình và gửi qua Zalo hoặc Telegram bên dưới để nhận mã kích hoạt bản quyền cá nhân miễn phí:</p>
+                        <div class="vac-contacts">
+                            <a href="https://zalo.me/0397176893?text=Chào%20Admin,%20mình%20muốn%20nhận%20key%20kích%20hoạt%20Voice%20Studio%20miễn%20phí" target="_blank" class="vac-btn vac-zalo">
+                                💬 Nhận Key Qua Zalo
+                            </a>
+                            <a href="https://t.me/SHIB_GOD68" target="_blank" class="vac-btn vac-tele">
+                                ✈️ Nhắn Telegram
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
