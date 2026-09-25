@@ -66,28 +66,34 @@
 
         /* HEADER */
         header {
-            padding: 18px 0;
+            padding: 13px 0;
             border-bottom: 1px solid var(--card-border);
             backdrop-filter: blur(14px);
             position: sticky;
             top: 0;
             z-index: 100;
-            background: rgba(9, 11, 16, 0.88);
+            background: rgba(9, 11, 16, 0.92);
         }
 
-        .nav-wrapper {
+        .header-container {
+            width: 100%;
+            max-width: 1560px;
+            margin: 0 auto;
+            padding: 0 28px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            gap: 16px;
         }
 
         .logo {
             display: flex;
             align-items: center;
-            gap: 14px;
+            gap: 12px;
             text-decoration: none;
             color: #fff;
             transition: all 0.25s ease;
+            flex-shrink: 0;
         }
 
         .logo:hover .logo-img {
@@ -96,9 +102,9 @@
         }
 
         .logo-img {
-            width: 42px;
-            height: 42px;
-            border-radius: 11px;
+            width: 38px;
+            height: 38px;
+            border-radius: 10px;
             object-fit: cover;
             display: block;
             box-shadow: 0 4px 14px rgba(255, 0, 85, 0.3);
@@ -112,11 +118,14 @@
         }
 
         .logo-brand {
-            font-size: 19px;
+            font-size: 17.5px;
             font-weight: 800;
-            letter-spacing: -0.4px;
+            letter-spacing: -0.3px;
             color: #ffffff;
             line-height: 1.2;
+            display: flex;
+            align-items: center;
+            gap: 7px;
         }
 
         .logo-brand span {
@@ -124,30 +133,29 @@
         }
 
         .logo-tagline {
-            font-size: 11px;
+            font-size: 10.5px;
             font-weight: 600;
             color: var(--text-muted);
             letter-spacing: 0.2px;
-            margin-top: 2px;
+            margin-top: 1px;
         }
 
         .badge-ver {
             display: inline-flex;
             align-items: center;
-            gap: 6px;
-            font-size: 11.5px;
-            background: rgba(16, 185, 129, 0.1);
+            gap: 5px;
+            font-size: 10.5px;
+            background: rgba(16, 185, 129, 0.12);
             color: #34d399;
-            padding: 4px 11px;
-            border-radius: 20px;
-            font-weight: 600;
-            border: 1px solid rgba(16, 185, 129, 0.3);
-            margin-left: 6px;
+            padding: 2px 7px;
+            border-radius: 12px;
+            font-weight: 700;
+            border: 1px solid rgba(16, 185, 129, 0.35);
         }
 
         .badge-dot {
-            width: 6.5px;
-            height: 6.5px;
+            width: 5.5px;
+            height: 5.5px;
             background: #10b981;
             border-radius: 50%;
             box-shadow: 0 0 8px #10b981;
@@ -163,19 +171,19 @@
         .header-actions {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
             flex-shrink: 0;
         }
 
         .btn-contact-header {
             display: inline-flex;
             align-items: center;
-            gap: 6px;
-            padding: 8px 14px;
+            gap: 5px;
+            padding: 7px 12px;
             border-radius: 8px;
             text-decoration: none;
             font-weight: 600;
-            font-size: 13px;
+            font-size: 12.5px;
             transition: all 0.2s ease;
             white-space: nowrap;
             flex-shrink: 0;
@@ -203,21 +211,21 @@
         .nav-menu {
             display: flex;
             align-items: center;
-            gap: 4px;
+            gap: 2px;
             background: rgba(255, 255, 255, 0.035);
-            padding: 4px 6px;
+            padding: 3px 5px;
             border-radius: 30px;
             border: 1px solid rgba(255, 255, 255, 0.08);
             backdrop-filter: blur(10px);
-            flex-shrink: 0;
+            flex-shrink: 1;
         }
 
         .nav-link {
             color: #94a3b8;
             text-decoration: none;
-            font-size: 13px;
+            font-size: 12.5px;
             font-weight: 600;
-            padding: 6px 13px;
+            padding: 5px 10px;
             border-radius: 20px;
             transition: all 0.2s ease;
             white-space: nowrap;
@@ -593,6 +601,123 @@
             border-radius: 8px;
             display: block;
             border: 1px solid rgba(255, 255, 255, 0.05);
+            cursor: zoom-in;
+            transition: transform 0.25s ease, filter 0.25s ease;
+        }
+
+        .weapon-frame:hover .weapon-img {
+            filter: brightness(1.05);
+        }
+
+        .weapon-frame {
+            position: relative;
+        }
+
+        .weapon-frame::after {
+            content: "🔍 Bấm để phóng to cực nét";
+            position: absolute;
+            bottom: 18px;
+            right: 18px;
+            background: rgba(15, 23, 42, 0.85);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #38bdf8;
+            font-size: 11.5px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 20px;
+            pointer-events: none;
+            opacity: 0;
+            transform: translateY(4px);
+            transition: all 0.25s ease;
+            backdrop-filter: blur(8px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+        }
+
+        .weapon-frame:hover::after {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* LIGHTBOX MODAL */
+        .img-lightbox-backdrop {
+            position: fixed;
+            inset: 0;
+            background: rgba(4, 6, 12, 0.88);
+            backdrop-filter: blur(12px);
+            z-index: 99999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.25s ease;
+            cursor: zoom-out;
+        }
+
+        .img-lightbox-backdrop.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .img-lightbox-container {
+            position: relative;
+            max-width: 95vw;
+            max-height: 92vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            cursor: default;
+        }
+
+        .img-lightbox-img {
+            max-width: 100%;
+            max-height: 85vh;
+            border-radius: 12px;
+            box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.95), 0 0 0 1px rgba(255, 255, 255, 0.15);
+            transform: scale(0.95);
+            transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+            object-fit: contain;
+        }
+
+        .img-lightbox-backdrop.active .img-lightbox-img {
+            transform: scale(1);
+        }
+
+        .img-lightbox-caption {
+            margin-top: 12px;
+            color: #e2e8f0;
+            font-size: 13.5px;
+            font-weight: 600;
+            background: rgba(15, 23, 42, 0.8);
+            padding: 6px 16px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .img-lightbox-close {
+            position: absolute;
+            top: -14px;
+            right: -14px;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: #ff0055;
+            color: #fff;
+            border: 2px solid #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 4px 16px rgba(255, 0, 85, 0.5);
+            transition: transform 0.2s ease, background 0.2s ease;
+        }
+
+        .img-lightbox-close:hover {
+            transform: scale(1.12);
+            background: #e6004c;
         }
 
         /* VALUE COMPARISON TABLE */
@@ -1220,17 +1345,19 @@
 
     <!-- HEADER -->
     <header>
-        <div class="container nav-wrapper">
+        <div class="header-container">
             <a href="#" class="logo">
                 <img src="assets/app_icon.png" alt="YouTube Adung Logo" class="logo-img">
                 <div class="logo-text-group">
-                    <div class="logo-brand">YouTube <span>Adung</span></div>
+                    <div class="logo-brand">
+                        YouTube <span>Adung</span>
+                        <span class="badge-ver">
+                            <span class="badge-dot"></span>
+                            v1.1
+                        </span>
+                    </div>
                     <div class="logo-tagline">Nghiên Cứu &amp; Phân Tích Nội Dung</div>
                 </div>
-                <span class="badge-ver">
-                    <span class="badge-dot"></span>
-                    Official Release v1.1
-                </span>
             </a>
 
             <!-- QUICK ACCESS TABS -->
@@ -1239,7 +1366,7 @@
                 <a href="#so-sanh" class="nav-link">⚖️ So Sánh</a>
                 <a href="#bang-gia" class="nav-link">🏷️ Bảng Giá</a>
                 <a href="#voice-studio" class="nav-link nav-link-voice">🎙️ Voice Studio <span class="nav-free-badge">Free</span></a>
-                <a href="huong-dan-lay-api.html" class="nav-link" target="_blank" style="color: #38bdf8; font-weight: 700;">📖 Hướng Dẫn Lấy API</a>
+                <a href="huong-dan-lay-api.html" class="nav-link" target="_blank" style="color: #38bdf8; font-weight: 700;">📖 Lấy API</a>
                 <a href="#huong-dan" class="nav-link">🚀 Cài Đặt</a>
                 <a href="#faq" class="nav-link">❓ FAQ</a>
             </nav>
@@ -1251,11 +1378,11 @@
                     </svg>
                     <span>Tải Về Ngay</span>
                 </a>
-                <a href="https://zalo.me/g/m2hdhe9f76gqjuyofjxi" target="_blank" class="btn-contact-header btn-zalo-header">
-                    💬 Nhóm Zalo Hỗ Trợ
+                <a href="https://zalo.me/g/m2hdhe9f76gqjuyofjxi" target="_blank" class="btn-contact-header btn-zalo-header" title="Tham gia nhóm Zalo hỗ trợ kỹ thuật">
+                    💬 Zalo Hỗ Trợ
                 </a>
-                <a href="https://t.me/SHIB_GOD68" target="_blank" class="btn-contact-header btn-tele-header">
-                    ✈️ Tele: @SHIB_GOD68
+                <a href="https://t.me/SHIB_GOD68" target="_blank" class="btn-contact-header btn-tele-header" title="Liên hệ Telegram trực tiếp @SHIB_GOD68">
+                    ✈️ Telegram
                 </a>
             </div>
         </div>
@@ -1873,9 +2000,53 @@
         </div>
     </footer>
 
+    <!-- LIGHTBOX OVERLAY -->
+    <div id="imageLightbox" class="img-lightbox-backdrop" aria-hidden="true">
+        <div class="img-lightbox-container" onclick="event.stopPropagation()">
+            <button class="img-lightbox-close" id="lightboxCloseBtn" title="Đóng (Phím Esc)">&times;</button>
+            <img id="lightboxTargetImg" class="img-lightbox-img" src="" alt="Phóng to ảnh tính năng">
+            <div id="lightboxCaption" class="img-lightbox-caption"></div>
+        </div>
+    </div>
+
     <!-- SCROLLSPY & SMOOTH SCROLL SCRIPT -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            // Lightbox functionality for feature images
+            const lightbox = document.getElementById('imageLightbox');
+            const targetImg = document.getElementById('lightboxTargetImg');
+            const caption = document.getElementById('lightboxCaption');
+            const closeBtn = document.getElementById('lightboxCloseBtn');
+
+            function openLightbox(img) {
+                targetImg.src = img.src;
+                targetImg.alt = img.alt || 'Ảnh chi tiết tính năng';
+                const frameTitle = img.closest('.weapon-frame')?.querySelector('.frame-title')?.textContent;
+                caption.textContent = frameTitle || img.alt || 'Chi tiết tính năng';
+                lightbox.classList.add('active');
+                lightbox.setAttribute('aria-hidden', 'false');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeLightbox() {
+                lightbox.classList.remove('active');
+                lightbox.setAttribute('aria-hidden', 'true');
+                document.body.style.overflow = '';
+            }
+
+            document.querySelectorAll('.weapon-img').forEach(img => {
+                img.addEventListener('click', () => openLightbox(img));
+            });
+
+            lightbox.addEventListener('click', closeLightbox);
+            closeBtn.addEventListener('click', closeLightbox);
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+                    closeLightbox();
+                }
+            });
+
             const sections = document.querySelectorAll('section[id]');
             const navLinks = document.querySelectorAll('.nav-link');
 
