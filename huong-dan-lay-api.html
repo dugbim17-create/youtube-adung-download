@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hướng Dẫn Chi Tiết Lấy API Key Cho Tool YouTube Adung (Miễn Phí 100%)</title>
+    <!-- Favicon / Logo Tool -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="icon" type="image/png" href="assets/app_icon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #090b10;
+            --card-bg: rgba(18, 24, 38, 0.75);
+            --card-border: rgba(255, 255, 255, 0.08);
+            --primary: #ff0055;
+            --cyan: #00e5ff;
+            --cyan-glow: rgba(0, 229, 255, 0.25);
+            --blue: #2563eb;
+            --green: #10b981;
+            --gold: #f59e0b;
+            --text: #f0f4fc;
+            --text-muted: #94a3b8;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            padding-bottom: 80px;
+        }
+
+        /* HEADER */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(9, 11, 16, 0.92);
+            backdrop-filter: blur(14px);
+            border-bottom: 1px solid var(--card-border);
+            padding: 14px 0;
+        }
+
+        .container {
+            max-width: 1080px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 15px;
+        }
+
+        .logo-box {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--text);
+        }
+
+        .logo-box img {
+            width: 38px;
+            height: 38px;
+            border-radius: 8px;
+        }
+
+        .logo-title {
+            font-size: 16px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #fff 0%, #38bdf8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .logo-sub {
+            font-size: 11px;
+            color: var(--text-muted);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nav-btn {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 600;
+            padding: 6px 14px;
+            border-radius: 6px;
+            transition: all 0.2s;
+        }
+
+        .nav-btn:hover {
+            color: #fff;
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .nav-btn-home {
+            background: rgba(56, 189, 248, 0.1);
+            color: #38bdf8;
+            border: 1px solid rgba(56, 189, 248, 0.3);
+        }
+
+        .nav-btn-home:hover {
+            background: #38bdf8;
+            color: #000;
+        }
+
+        /* HERO INTRO */
+        .hero {
+            padding: 50px 0 30px;
+            text-align: center;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(2, 132, 199, 0.15);
+            border: 1px solid rgba(56, 189, 248, 0.4);
+            color: #38bdf8;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            font-size: 32px;
+            font-weight: 800;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            color: var(--text-muted);
+            font-size: 15px;
+            max-width: 760px;
+            margin: 0 auto 25px;
+        }
+
+        /* QUICK JUMP CARDS */
+        .jump-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 16px;
+            margin-bottom: 40px;
+        }
+
+        .jump-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 20px;
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            transition: all 0.25s;
+        }
+
+        .jump-card:hover {
+            border-color: #38bdf8;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(56, 189, 248, 0.15);
+        }
+
+        .jump-card-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+            font-size: 15px;
+        }
+
+        .jump-card-desc {
+            font-size: 12.5px;
+            color: var(--text-muted);
+        }
+
+        .jump-badge {
+            font-size: 11px;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-weight: 700;
+            margin-left: auto;
+        }
+
+        .badge-free {
+            background: rgba(16, 185, 129, 0.2);
+            color: #34d399;
+            border: 1px solid rgba(16, 185, 129, 0.4);
+        }
+
+        .badge-pro {
+            background: rgba(245, 158, 11, 0.2);
+            color: #fbbf24;
+            border: 1px solid rgba(245, 158, 11, 0.4);
+        }
+
+        /* SECTION STYLES */
+        .section-box {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            padding: 32px 28px;
+            margin-bottom: 40px;
+            backdrop-filter: blur(10px);
+        }
+
+        .section-header {
+            margin-bottom: 25px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--card-border);
+        }
+
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 22px;
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 6px;
+        }
+
+        .section-subtitle {
+            font-size: 13.5px;
+            color: var(--text-muted);
+        }
+
+        /* STEP ITEM */
+        .step-block {
+            margin-bottom: 35px;
+        }
+
+        .step-block:last-child {
+            margin-bottom: 0;
+        }
+
+        .step-title-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 14px;
+        }
+
+        .step-tag {
+            background: #0284c7;
+            color: #fff;
+            font-size: 12px;
+            font-weight: 800;
+            padding: 4px 10px;
+            border-radius: 6px;
+            letter-spacing: 0.5px;
+        }
+
+        .step-name {
+            font-size: 17px;
+            font-weight: 700;
+            color: #f1f5f9;
+        }
+
+        .step-link-btn {
+            margin-left: auto;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: #1e3a8a;
+            color: #38bdf8;
+            border: 1px solid #0284c7;
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .step-link-btn:hover {
+            background: #0284c7;
+            color: #fff;
+        }
+
+        /* IMAGE CONTAINER */
+        .guide-img-box {
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            background: #0b0f17;
+            margin-bottom: 16px;
+        }
+
+        .guide-img-box img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* INSTRUCTIONS & TIPS */
+        .step-desc-list {
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 16px 20px;
+            margin-bottom: 12px;
+        }
+
+        .step-desc-list ol {
+            padding-left: 20px;
+            color: #cbd5e1;
+            font-size: 13.5px;
+        }
+
+        .step-desc-list li {
+            margin-bottom: 8px;
+        }
+
+        .step-desc-list li strong {
+            color: #38bdf8;
+        }
+
+        .tip-box {
+            background: rgba(245, 158, 11, 0.1);
+            border: 1px solid rgba(245, 158, 11, 0.3);
+            border-radius: 8px;
+            padding: 12px 16px;
+            font-size: 13px;
+            color: #fde68a;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .tip-box.success {
+            background: rgba(16, 185, 129, 0.1);
+            border-color: rgba(16, 185, 129, 0.3);
+            color: #a7f3d0;
+        }
+
+        /* FAQ ACCORDION */
+        .faq-item {
+            border: 1px solid var(--card-border);
+            border-radius: 10px;
+            background: rgba(15, 23, 42, 0.5);
+            padding: 16px 20px;
+            margin-bottom: 12px;
+        }
+
+        .faq-q {
+            font-size: 15px;
+            font-weight: 700;
+            color: #38bdf8;
+            margin-bottom: 8px;
+        }
+
+        .faq-a {
+            font-size: 13.5px;
+            color: #94a3b8;
+            line-height: 1.6;
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            color: var(--text-muted);
+            font-size: 13px;
+        }
+
+        footer a {
+            color: #38bdf8;
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 24px; }
+            .section-title { font-size: 18px; }
+            .step-title-row { flex-wrap: wrap; }
+            .step-link-btn { width: 100%; justify-content: center; }
+            .section-box { padding: 20px 16px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- TOP HEADER -->
+    <header>
+        <div class="container header-content">
+            <a href="index.html" class="logo-box">
+                <img src="assets/app_icon.png" alt="YouTube Adung Logo">
+                <div>
+                    <div class="logo-title">YouTube Adung Commercial</div>
+                    <div class="logo-sub">Tài Liệu Hướng Dẫn Kỹ Thuật</div>
+                </div>
+            </a>
+            <div class="nav-links">
+                <a href="#youtube-api" class="nav-btn">▶ YouTube API</a>
+                <a href="#gemini-api" class="nav-btn">✨ Gemini AI</a>
+                <a href="#deepseek-api" class="nav-btn">🐳 DeepSeek</a>
+                <a href="#faq" class="nav-btn">❓ FAQ Lỗi</a>
+                <a href="index.html" class="nav-btn nav-btn-home">🏠 Về Trang Chủ</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+
+        <!-- HERO SECTION -->
+        <section class="hero">
+            <div class="hero-badge">📖 CẨM NANG HƯỚNG DẪN CHI TIẾT (CÓ ẢNH TỪNG BƯỚC)</div>
+            <h1>Cách Lấy Toàn Bộ API Key Cần Thiết Cho Tool</h1>
+            <p>
+                Dành cho cả người mới bắt đầu và không rành công nghệ. Bạn chỉ cần làm theo đúng từng bước ảnh minh họa dưới đây là sẽ lấy được mã API hoàn toàn <strong>MIỄN PHÍ 100%</strong> trong vòng 1 đến 2 phút!
+            </p>
+
+            <!-- QUICK JUMP -->
+            <div class="jump-grid">
+                <a href="#youtube-api" class="jump-card">
+                    <div class="jump-card-header">
+                        <span>▶ YouTube Data API v3</span>
+                        <span class="jump-badge badge-free">Miễn Phí 100%</span>
+                    </div>
+                    <div class="jump-card-desc">Cần để cào kênh đối thủ, đo view/sub, phân tích ngách và lấy phụ đề video.</div>
+                </a>
+
+                <a href="#gemini-api" class="jump-card">
+                    <div class="jump-card-header">
+                        <span>✨ Google Gemini AI</span>
+                        <span class="jump-badge badge-free">Miễn Phí 100%</span>
+                    </div>
+                    <div class="jump-card-desc">Cần để dịch kịch bản nước ngoài sang tiếng Việt và viết lại kịch bản viral.</div>
+                </a>
+
+                <a href="#deepseek-api" class="jump-card">
+                    <div class="jump-card-header">
+                        <span>🐳 DeepSeek AI (Tùy chọn)</span>
+                        <span class="jump-badge badge-pro">Chuyên Nghiệp</span>
+                    </div>
+                    <div class="jump-card-desc">Dành cho ai thích văn phong ma mị, sâu sắc, kể chuyện hấp dẫn số 1.</div>
+                </a>
+            </div>
+        </section>
+
+        <!-- =================================================================== -->
+        <!-- PHẦN 1: YOUTUBE DATA API V3 -->
+        <!-- =================================================================== -->
+        <section class="section-box" id="youtube-api">
+            <div class="section-header">
+                <div class="section-title">
+                    <span>1. Hướng Dẫn Lấy YouTube Data API v3 Key (Google Cloud)</span>
+                    <span class="jump-badge badge-free">10.000 Quota/Ngày</span>
+                </div>
+                <div class="section-subtitle">
+                    API này được cấp chính thức từ Google Cloud Console. Hoàn toàn miễn phí vĩnh viễn, không cần thẻ tín dụng!
+                </div>
+            </div>
+
+            <!-- BƯỚC 1 -->
+            <div class="step-block">
+                <div class="step-title-row">
+                    <span class="step-tag">BƯỚC 1</span>
+                    <h3 class="step-name">Mở Google Cloud Console & Tạo Dự Án Mới</h3>
+                    <a href="https://console.cloud.google.com/" target="_blank" class="step-link-btn">
+                        🌐 Mở Google Cloud Console ↗
+                    </a>
+                </div>
+                <div class="guide-img-box">
+                    <img src="assets/guide/yt_step1_new_project.png" alt="Bước 1 Tạo dự án Google Cloud">
+                </div>
+                <div class="step-desc-list">
+                    <ol>
+                        <li>Truy cập vào trang chủ <strong>console.cloud.google.com</strong> và đăng nhập bằng tài khoản Gmail của bạn.</li>
+                        <li>Ở thanh trên cùng (góc bên trái), bấm vào ô menu chọn dự án (<strong>Select a project</strong>).</li>
+                        <li>Một cửa sổ nhỏ hiện lên, bấm ngay nút màu xanh <strong>+ NEW PROJECT</strong> (Dự án mới).</li>
+                        <li>Tại ô <strong>Project name</strong>, nhập tên bất kỳ (Ví dụ: <code>YouTube-Adung-Tool-1</code>).</li>
+                        <li>Bấm nút <strong>CREATE</strong> và đợi khoảng 5–10 giây để Google tạo xong dự án.</li>
+                    </ol>
+                </div>
+                <div class="tip-box">
+                    <span>💡</span>
+                    <div><strong>Lưu ý:</strong> Tài khoản Google hoàn toàn miễn phí, không yêu cầu thẻ Visa hay thanh toán quốc tế nào cả!</div>
+                </div>
+            </div>
+
+            <!-- BƯỚC 2 -->
+            <div class="step-block">
+                <div class="step-title-row">
+                    <span class="step-tag">BƯỚC 2</span>
+                    <h3 class="step-name">Vào Thư Viện API & Bấm Kích Hoạt (ENABLE)</h3>
+                    <a href="https://console.cloud.google.com/apis/library/youtube.googleapis.com" target="_blank" class="step-link-btn">
+                        ⚡ Mở Trang Kích Hoạt YouTube API ↗
+                    </a>
+                </div>
+                <div class="guide-img-box">
+                    <img src="assets/guide/yt_step2_enable_api.png" alt="Bước 2 Kích hoạt YouTube Data API">
+                </div>
+                <div class="step-desc-list">
+                    <ol>
+                        <li>Vào menu bên trái chọn mục <strong>APIs & Services</strong> ➔ chọn <strong>Library</strong> (Thư viện).</li>
+                        <li>Tại ô tìm kiếm, gõ đúng từ khóa: <strong>YouTube Data API v3</strong> rồi nhấn Enter.</li>
+                        <li>Bấm chuột vào kết quả <strong>YouTube Data API v3</strong> hiện ra.</li>
+                        <li>Bấm nút màu xanh dương lớn có chữ <strong>ENABLE</strong> (Bật).</li>
+                        <li>Đợi 3 giây để hệ thống kích hoạt quyền truy cập YouTube cho dự án của bạn.</li>
+                    </ol>
+                </div>
+                <div class="tip-box">
+                    <span>⚠️</span>
+                    <div><strong>Rất quan trọng:</strong> Bắt buộc phải bấm <strong>ENABLE</strong>. Nếu quên bước này, khi quét tool sẽ báo lỗi <em>403 Forbidden: API has not been enabled</em>.</div>
+                </div>
+            </div>
+
+            <!-- BƯỚC 3 -->
+            <div class="step-block">
+                <div class="step-title-row">
+                    <span class="step-tag">BƯỚC 3</span>
+                    <h3 class="step-name">Vào Mục Credentials & Tạo Mã API Key</h3>
+                    <a href="https://console.cloud.google.com/apis/credentials" target="_blank" class="step-link-btn">
+                        🔑 Mở Trang Tạo Credentials ↗
+                    </a>
+                </div>
+                <div class="guide-img-box">
+                    <img src="assets/guide/yt_step3_create_credentials.png" alt="Bước 3 Tạo API Key Credentials">
+                </div>
+                <div class="step-desc-list">
+                    <ol>
+                        <li>Vào menu bên trái chọn mục <strong>APIs & Services</strong> ➔ chọn <strong>Credentials</strong> (Thông tin xác thực).</li>
+                        <li>Nhìn lên thanh công cụ phía trên, bấm nút <strong>+ CREATE CREDENTIALS</strong>.</li>
+                        <li>Một menu xổ xuống, chọn ngay dòng đầu tiên: <strong>API key</strong>.</li>
+                        <li>Hệ thống của Google sẽ tự động tạo mã key cho bạn chỉ sau 2 giây!</li>
+                    </ol>
+                </div>
+            </div>
+
+            <!-- BƯỚC 4 -->
+            <div class="step-block">
+                <div class="step-title-row">
+                    <span class="step-tag">BƯỚC 4</span>
+                    <h3 class="step-name">Sao Chép Key & Dán Vào Tab "API Keys" Trên Tool</h3>
+                </div>
+                <div class="guide-img-box">
+                    <img src="assets/guide/yt_step4_copy_api_key.png" alt="Bước 4 Dán key vào tool YouTube Adung">
+                </div>
+                <div class="step-desc-list">
+                    <ol>
+                        <li>Trên Google Cloud, bấm biểu tượng <strong>Copy (Sao chép)</strong> mã API Key (dạng <code>AIzaSy...</code>).</li>
+                        <li>Mở phần mềm <strong>YouTube Adung Commercial</strong> lên, chọn tab <strong>🔑 API Keys</strong>.</li>
+                        <li>Dán mã key vào ô <em>"Nhập API Key mới"</em> rồi bấm nút màu xanh <strong>+ Thêm</strong>.</li>
+                        <li>Key của bạn sẽ hiện ra trong danh sách với hạn mức <strong>10.000 Quota</strong> sẵn sàng sử dụng ngay!</li>
+                    </ol>
+                </div>
+                <div class="tip-box success">
+                    <span>🎉</span>
+                    <div><strong>Thành công:</strong> Giờ đây bạn đã có thể bắt đầu quét kênh đối thủ, tìm ngách triệu view và cào kịch bản thoải mái!</div>
+                </div>
+            </div>
+
+            <!-- BƯỚC 5: MẸO PRO -->
+            <div class="step-block">
+                <div class="step-title-row">
+                    <span class="step-tag" style="background: #f59e0b;">MẸO PRO</span>
+                    <h3 class="step-name">Bí Quyết Tạo 3–5 Key Để Có 30.000 – 50.000 Quota/Ngày</h3>
+                </div>
+                <div class="guide-img-box">
+                    <img src="assets/guide/yt_step5_multiple_keys_trick.png" alt="Mẹo tạo nhiều dự án xoay vòng key">
+                </div>
+                <div class="step-desc-list">
+                    <p style="margin-bottom: 10px; color: #f1f5f9;"><strong>💡 Cách cào không bao giờ lo hết hạn mức:</strong></p>
+                    <ol>
+                        <li>Hạn mức 10.000 quota của Google tính trên <strong>từng Dự án (Project)</strong>, không phải tính trên tài khoản Gmail.</li>
+                        <li>Bạn có thể lặp lại Bước 1 để tạo thêm <strong>3 đến 5 dự án khác nhau</strong> trên cùng một tài khoản Gmail (ví dụ: <code>Tool-Project-2</code>, <code>Tool-Project-3</code>).</li>
+                        <li>Lấy mỗi dự án 1 API Key và dán tất cả vào tab <strong>API Keys</strong> của tool.</li>
+                        <li>Tool YouTube Adung có cơ chế <strong>xoay vòng thông minh</strong>: Khi Key 1 chạm 10k quota, tool tự động chuyển sang Key 2, Key 3... giúp bạn cào liên tục 24/7!</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <!-- =================================================================== -->
+        <!-- PHẦN 2: GOOGLE GEMINI AI API -->
+        <!-- =================================================================== -->
+        <section class="section-box" id="gemini-api">
+            <div class="section-header">
+                <div class="section-title">
+                    <span>2. Hướng Dẫn Lấy Google Gemini API Key (Google AI Studio)</span>
+                    <span class="jump-badge badge-free">Miễn Phí 100% Không Cần Thẻ</span>
+                </div>
+                <div class="section-subtitle">
+                    Dùng cho tính năng: Dịch kịch bản nước ngoài sang tiếng Việt, Viết lại kịch bản AI, Bóc tách Visual Hook thumbnail.
+                </div>
+            </div>
+
+            <!-- GEMINI BƯỚC 1 -->
+            <div class="step-block">
+                <div class="step-title-row">
+                    <span class="step-tag">BƯỚC 1</span>
+                    <h3 class="step-name">Mở Google AI Studio & Bấm "Create API key"</h3>
+                    <a href="https://aistudio.google.com/app/apikey" target="_blank" class="step-link-btn">
+                        ✨ Mở Google AI Studio ↗
+                    </a>
+                </div>
+                <div class="guide-img-box">
+                    <img src="assets/guide/gemini_step1_open_aistudio.png" alt="Bước 1 Lấy Gemini API key">
+                </div>
+                <div class="step-desc-list">
+                    <ol>
+                        <li>Truy cập vào trang <strong>aistudio.google.com/app/apikey</strong>.</li>
+                        <li>Đăng nhập bằng tài khoản Gmail của bạn (nếu có bảng hỏi đồng ý điều khoản, hãy bấm đồng ý).</li>
+                        <li>Bấm vào nút màu xanh dương nổi bật <strong>+ Create API key</strong>.</li>
+                        <li>Nếu có popup hỏi dự án, bạn chọn: <strong>Create API key in new project</strong>.</li>
+                        <li>Ngay lập tức, mã Key (bắt đầu bằng <code>AIzaSy...</code>) sẽ được tạo ra!</li>
+                    </ol>
+                </div>
+                <div class="tip-box success">
+                    <span>💡</span>
+                    <div><strong>Lợi ích lớn nhất:</strong> Google AI Studio không yêu cầu thẻ tín dụng Visa/Mastercard và cấp token miễn phí cực kỳ hào phóng mỗi ngày!</div>
+                </div>
+            </div>
+
+            <!-- GEMINI BƯỚC 2 -->
+            <div class="step-block">
+                <div class="step-title-row">
+                    <span class="step-tag">BƯỚC 2</span>
+                    <h3 class="step-name">Dán Key Vào Mục "Cài Đặt AI" Trên Tool</h3>
+                </div>
+                <div class="guide-img-box">
+                    <img src="assets/guide/gemini_step2_paste_tool.png" alt="Bước 2 Dán key Gemini vào cài đặt AI">
+                </div>
+                <div class="step-desc-list">
+                    <ol>
+                        <li>Trên giao diện Tool YouTube Adung, bấm nút <strong>Cài đặt AI</strong> (ở góc trên bên phải hoặc tab Viết Kịch Bản).</li>
+                        <li>Tại dòng <strong>Nhà cung cấp</strong>: Chọn <strong>Google Gemini (Miễn phí 100% - Khuyên dùng)</strong>.</li>
+                        <li>Dán mã key bạn vừa copy vào ô <strong>API key</strong>.</li>
+                        <li>Dòng <strong>Model AI</strong>: Bạn để mặc định <code>gemini-2.0-flash</code> hoặc gõ <code>gemini-3.1-flash-lite</code>.</li>
+                        <li>Bấm nút <strong>🔍 Kiểm tra Key</strong>: Khi thấy thông báo màu xanh báo kết nối thành công ➔ Bấm nút <strong>Save</strong>.</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <!-- =================================================================== -->
+        <!-- PHẦN 3: DEEPSEEK AI API (TÙY CHỌN) -->
+        <!-- =================================================================== -->
+        <section class="section-box" id="deepseek-api">
+            <div class="section-header">
+                <div class="section-title">
+                    <span>3. Hướng Dẫn Lấy DeepSeek API Key (Tùy Chọn - Kể Chuyện Cực Hay)</span>
+                    <span class="jump-badge badge-pro">Chuyên Nghiệp</span>
+                </div>
+                <div class="section-subtitle">
+                    DeepSeek nổi tiếng với văn phong tiếng Việt tự nhiên số 1 hiện nay, đặc biệt xuất sắc cho ngách review phim, truyện ma kinh dị, ký sự tài liệu.
+                </div>
+            </div>
+
+            <div class="step-block">
+                <div class="step-title-row">
+                    <span class="step-tag" style="background: #2563eb;">HƯỚNG DẪN</span>
+                    <h3 class="step-name">Lấy Key DeepSeek & Thiết Lập Vào Tool</h3>
+                    <a href="https://platform.deepseek.com/api_keys" target="_blank" class="step-link-btn">
+                        🐳 Mở DeepSeek Platform ↗
+                    </a>
+                </div>
+                <div class="guide-img-box">
+                    <img src="assets/guide/deepseek_step_guide.png" alt="Hướng dẫn lấy key DeepSeek">
+                </div>
+                <div class="step-desc-list">
+                    <ol>
+                        <li>Truy cập link: <strong>platform.deepseek.com</strong> và đăng ký tài khoản (được tặng sẵn token miễn phí ban đầu).</li>
+                        <li>Vào mục <strong>API Keys</strong> bên menu trái ➔ Bấm nút <strong>+ Create API Key</strong>.</li>
+                        <li>Đặt tên key (VD: <code>Tool-Youtube</code>) rồi bấm tạo, copy mã key dạng <code>sk-d4f8...</code>.</li>
+                        <li>Mở popup <strong>Cài đặt AI</strong> trên tool YouTube Adung:
+                            <ul style="margin-top: 6px; margin-left: 20px;">
+                                <li><strong>Nhà cung cấp:</strong> Chọn <em>OpenAI (Trả phí)</em>.</li>
+                                <li><strong>API key:</strong> Dán mã <code>sk-...</code> vừa copy.</li>
+                                <li><strong>Base URL:</strong> Nhập đúng: <code>https://api.deepseek.com</code></li>
+                                <li><strong>Model AI:</strong> Nhập đúng: <code>deepseek-chat</code></li>
+                            </ul>
+                        </li>
+                        <li>Bấm nút <strong>🔍 Kiểm tra Key</strong> ➔ Bấm <strong>Save</strong> để hoàn tất.</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <!-- =================================================================== -->
+        <!-- PHẦN 4: KHẮC PHỤC LỖI THƯỜNG GẶP (FAQ) -->
+        <!-- =================================================================== -->
+        <section class="section-box" id="faq">
+            <div class="section-header">
+                <div class="section-title">
+                    <span>❓ Câu Hỏi Thường Gặp & Xử Lý Sự Cố (FAQ)</span>
+                </div>
+                <div class="section-subtitle">
+                    Các tình huống người mới hay gặp phải và cách xử lý nhanh trong 30 giây.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q">Lỗi 403: "YouTube Data API v3 has not been used in project... or it is disabled" là gì?</div>
+                <div class="faq-a">
+                    <strong>Nguyên nhân:</strong> Bạn đã tạo API Key nhưng quên chưa bấm nút <strong>ENABLE (Bật)</strong> ở Bước 2.<br>
+                    <strong>Cách sửa:</strong> Vào link: <a href="https://console.cloud.google.com/apis/library/youtube.googleapis.com" target="_blank" style="color: #38bdf8;">console.cloud.google.com/apis/library/youtube.googleapis.com</a>, chọn đúng dự án của bạn và bấm nút màu xanh <strong>ENABLE</strong> là xong ngay!
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q">Lỗi 403 / 429: "Quota exceeded" (Đã hết hạn mức trong ngày) xử lý thế nào?</div>
+                <div class="faq-a">
+                    <strong>Nguyên nhân:</strong> Key của bạn đã gọi hết 10.000 quota miễn phí trong 24 giờ của Google.<br>
+                    <strong>Cách sửa:</strong> Bạn chỉ cần tạo thêm 2–3 Dự án mới trên Google Cloud (theo Bước 1), lấy thêm 2–3 key dán vào tab <strong>API Keys</strong> của tool. Tool sẽ tự động xoay vòng sang key mới mà không làm gián đoạn công việc của bạn.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q">Nhập API Key vào tool có bị lộ mật khẩu hay mất tài khoản không?</div>
+                <div class="faq-a">
+                    <strong>Hoàn toàn an toàn 100%:</strong> API Key chỉ là một mã khóa kỹ thuật để lấy dữ liệu công khai trên YouTube và gọi AI. Toàn bộ mã key được lưu trữ bảo mật cục bộ trực tiếp trên ổ cứng máy tính của bạn, <strong>tuyệt đối không bao giờ</strong> gửi về máy chủ của bên thứ ba nào khác.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q">Nếu tôi gặp khó khăn không tự lấy được key thì có được hỗ trợ không?</div>
+                <div class="faq-a">
+                    <strong>Luôn có Admin hỗ trợ:</strong> Bạn chỉ cần tham gia <a href="https://zalo.me/g/m2hdhe9f76gqjuyofjxi" target="_blank" style="color: #38bdf8; font-weight: 700;">Nhóm Zalo Hỗ Trợ</a> hoặc nhắn tin Telegram <a href="https://t.me/SHIB_GOD68" target="_blank" style="color: #38bdf8; font-weight: 700;">@SHIB_GOD68</a>, Admin sẽ hỗ trợ Ultraview / Teamviewer hướng dẫn bạn trực tiếp chỉ trong 2 phút!
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer>
+            <p>© 2026 YouTube Adung Commercial. All rights reserved.</p>
+            <p style="margin-top: 8px;">
+                <a href="index.html">Về Trang Chủ Tải Về</a> • 
+                <a href="https://zalo.me/g/m2hdhe9f76gqjuyofjxi" target="_blank">Nhóm Zalo Hỗ Trợ</a> • 
+                <a href="https://t.me/SHIB_GOD68" target="_blank">Telegram Admin</a>
+            </p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
