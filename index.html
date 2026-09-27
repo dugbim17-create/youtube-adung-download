@@ -2086,113 +2086,192 @@
             window.addEventListener('scroll', updateActiveNav, { passive: true });
             updateActiveNav();
 
-            // ==========================================
-            // GA4 — EVENT TRACKING CHO VOICE STUDIO & APP
-            // ==========================================
+            // =========================================================================
+            // GA4 — TOÀN DIỆN HỆ THỐNG ĐO LƯỜNG TOÀN BỘ WEBSITE ADUNG.TOP (G-BNTRPJ6YL7)
+            // =========================================================================
             try {
-                // 1. Theo dõi khi khách vào thẳng link có #voice-studio
-                if (window.location.hash === '#voice-studio' && typeof gtag === 'function') {
-                    gtag('event', 'voice_studio_direct_land', {
-                        event_category: 'Voice Studio',
-                        event_label: 'Direct Hash Visit'
-                    });
-                }
+                if (typeof gtag === 'function') {
+                    const sectionTitles = {
+                        'download': '⚡ Tải Về Cài Đặt v1.2',
+                        'tinh-nang': '✨ Tính Năng Đột Phá',
+                        'so-sanh': '⚖️ So Sánh Phiên Bản',
+                        'bang-gia': '🏷️ Bảng Giá Bản Quyền',
+                        'voice-studio': '🎙️ Voice Studio Free Lead Magnet',
+                        'huong-dan': '🚀 3 Bước Bắt Đầu & Hướng Dẫn',
+                        'faq': '❓ Câu Hỏi Thường Gặp (FAQ)'
+                    };
 
-                // 2. Theo dõi khi khách bấm menu "🎙️ Voice Studio" trên thanh điều hướng
-                document.querySelectorAll('a[href="#voice-studio"]').forEach(function(el) {
-                    el.addEventListener('click', function() {
-                        if (typeof gtag === 'function') {
-                            gtag('event', 'voice_studio_nav_click', {
-                                event_category: 'Voice Studio',
-                                event_label: 'Header Nav Click'
+                    // 1. Tự động ghi nhận Virtual Pageview khi đổi thẻ Hash trên URL (SPA tracking)
+                    function trackHashPageView(hash) {
+                        const cleanHash = (hash || '').replace(/^#/, '');
+                        if (!cleanHash) return;
+                        const label = sectionTitles[cleanHash] || ('Mục #' + cleanHash);
+                        gtag('event', 'page_view', {
+                            page_title: 'Adung.top — ' + label,
+                            page_location: window.location.origin + window.location.pathname + '#' + cleanHash,
+                            page_path: '/#' + cleanHash
+                        });
+                        gtag('event', 'section_engagement', {
+                            section_id: cleanHash,
+                            section_name: label
+                        });
+                    }
+
+                    // Bắt sự kiện khi user vào thẳng link có #hash lúc tải trang
+                    if (window.location.hash) {
+                        trackHashPageView(window.location.hash);
+                    }
+
+                    // Lắng nghe khi URL thay đổi hash
+                    window.addEventListener('hashchange', function() {
+                        trackHashPageView(window.location.hash);
+                    });
+
+                    // 2. Theo dõi tất cả các lượt bấm trên Menu điều hướng Header & Mobile
+                    document.querySelectorAll('.nav-link, .btn-download-quick').forEach(function(link) {
+                        link.addEventListener('click', function() {
+                            const href = link.getAttribute('href') || '';
+                            const txt = (link.textContent || '').trim().replace(/\s+/g, ' ');
+                            gtag('event', 'nav_menu_click', {
+                                menu_text: txt,
+                                target_url: href
+                            });
+                        });
+                    });
+
+                    // 3. Theo dõi hiển thị thực tế từng phân đoạn (Section View) khi người dùng cuộn tới
+                    if ('IntersectionObserver' in window) {
+                        const viewedSections = new Set();
+                        const sectionObserver = new IntersectionObserver(function(entries) {
+                            entries.forEach(function(entry) {
+                                if (entry.isIntersecting) {
+                                    const sid = entry.target.id;
+                                    if (sid && !viewedSections.has(sid)) {
+                                        viewedSections.add(sid);
+                                        const sTitle = sectionTitles[sid] || sid;
+                                        gtag('event', 'view_section_scroll', {
+                                            section_id: sid,
+                                            section_name: sTitle
+                                        });
+                                    }
+                                }
+                            });
+                        }, { threshold: 0.25 });
+
+                        document.querySelectorAll('section[id]').forEach(function(s) {
+                            sectionObserver.observe(s);
+                        });
+                    }
+
+                    // 4. Theo dõi MỌI nút Tải bản cài đặt Youtube Adung Commercial v1.2
+                    document.querySelectorAll('a[href*="Setup_Youtube_Adung"], #download-btn').forEach(function(btn) {
+                        btn.addEventListener('click', function() {
+                            const href = btn.getAttribute('href') || '';
+                            const isDrive = href.includes('drive.google.com');
+                            gtag('event', 'download_main_app', {
+                                app_version: 'Commercial v1.2',
+                                download_source: isDrive ? 'Google Drive' : 'GitHub Server',
+                                file_url: href
+                            });
+                        });
+                    });
+
+                    // 5. Theo dõi MỌI nút bấm trên Bảng Giá (Gói Tuần, Gói Tháng, 6 Tháng, Năm, Vĩnh Viễn)
+                    document.querySelectorAll('.pricing-card').forEach(function(card) {
+                        const titleEl = card.querySelector('.pricing-title');
+                        const priceEl = card.querySelector('.pricing-price');
+                        const planBtn = card.querySelector('.btn-pricing');
+                        if (planBtn) {
+                            planBtn.addEventListener('click', function() {
+                                const planName = titleEl ? titleEl.textContent.trim() : 'Gói phần mềm';
+                                const planPrice = priceEl ? priceEl.textContent.trim() : '';
+                                gtag('event', 'select_pricing_plan', {
+                                    plan_name: planName,
+                                    plan_price: planPrice
+                                });
                             });
                         }
                     });
-                });
 
-                // 3. Theo dõi khi khách cuộn màn hình tới khu vực Voice Studio (chỉ tính 1 lần / phiên)
-                const voiceSection = document.getElementById('voice-studio');
-                if (voiceSection && 'IntersectionObserver' in window) {
-                    let voiceViewed = false;
-                    const observer = new IntersectionObserver(function(entries) {
-                        entries.forEach(function(entry) {
-                            if (entry.isIntersecting && !voiceViewed) {
-                                voiceViewed = true;
-                                if (typeof gtag === 'function') {
-                                    gtag('event', 'voice_studio_view', {
-                                        event_category: 'Voice Studio',
-                                        event_label: 'Section In View'
-                                    });
-                                }
+                    // 6. Theo dõi MỌI nút liên hệ tư vấn (Zalo, Telegram) trên toàn bộ trang
+                    document.querySelectorAll('a[href*="zalo.me"]').forEach(function(btn) {
+                        btn.addEventListener('click', function() {
+                            const pos = btn.closest('#voice-studio') ? 'Voice Studio' : (btn.closest('#bang-gia') ? 'Bảng Giá' : (btn.closest('header') ? 'Header' : 'Chân Trang'));
+                            gtag('event', 'contact_zalo_click', {
+                                position: pos,
+                                contact_url: btn.href
+                            });
+                        });
+                    });
+
+                    document.querySelectorAll('a[href*="t.me"]').forEach(function(btn) {
+                        btn.addEventListener('click', function() {
+                            const pos = btn.closest('#voice-studio') ? 'Voice Studio' : (btn.closest('#bang-gia') ? 'Bảng Giá' : (btn.closest('header') ? 'Header' : 'Chân Trang'));
+                            gtag('event', 'contact_telegram_click', {
+                                position: pos,
+                                contact_url: btn.href
+                            });
+                        });
+                    });
+
+                    // 7. Theo dõi riêng mục Voice Studio Lead Magnet (Tải file, Xem chi tiết)
+                    const btnVoiceDrive = document.getElementById('btnDownloadVoice');
+                    if (btnVoiceDrive) {
+                        btnVoiceDrive.addEventListener('click', function() {
+                            gtag('event', 'voice_studio_download', {
+                                method: 'Google Drive Speed',
+                                file_name: 'Voice_Studio_v1.0.zip'
+                            });
+                        });
+                    }
+
+                    const btnVoiceGithub = document.getElementById('btnDownloadGithub');
+                    if (btnVoiceGithub) {
+                        btnVoiceGithub.addEventListener('click', function() {
+                            gtag('event', 'voice_studio_download', {
+                                method: 'GitHub Server',
+                                file_name: 'Voice_Studio_v1.0.zip'
+                            });
+                        });
+                    }
+
+                    // 8. Theo dõi khách bấm xem ảnh tính năng phóng to (Lightbox Zoom)
+                    document.querySelectorAll('.weapon-img').forEach(function(img) {
+                        img.addEventListener('click', function() {
+                            const frameTitle = img.closest('.weapon-frame')?.querySelector('.frame-title')?.textContent?.trim() || img.alt || 'Ảnh tính năng';
+                            gtag('event', 'view_feature_screenshot', {
+                                feature_name: frameTitle
+                            });
+                        });
+                    });
+
+                    // 9. Theo dõi khách bấm vào link hướng dẫn lấy API Key
+                    document.querySelectorAll('a[href*="huong-dan-lay-api"]').forEach(function(link) {
+                        link.addEventListener('click', function() {
+                            gtag('event', 'click_api_guide', {
+                                link_text: link.textContent.trim()
+                            });
+                        });
+                    });
+
+                    // 10. Theo dõi độ cuộn trang toàn web (Scroll Depth: 25%, 50%, 75%, 90%)
+                    const scrollMilestones = [25, 50, 75, 90];
+                    const triggeredMilestones = new Set();
+                    window.addEventListener('scroll', function() {
+                        const h = document.documentElement;
+                        const b = document.body;
+                        const st = 'scrollTop';
+                        const sh = 'scrollHeight';
+                        const percent = Math.round(((h[st] || b[st]) / ((h[sh] || b[sh]) - h.clientHeight)) * 100);
+                        scrollMilestones.forEach(function(ms) {
+                            if (percent >= ms && !triggeredMilestones.has(ms)) {
+                                triggeredMilestones.add(ms);
+                                gtag('event', 'scroll_depth', {
+                                    percent_scrolled: ms + '%'
+                                });
                             }
                         });
-                    }, { threshold: 0.25 });
-                    observer.observe(voiceSection);
-                }
-
-                // 4. Theo dõi nút Tải Voice Studio tốc độ cao (Google Drive)
-                const btnVoiceDrive = document.getElementById('btnDownloadVoice');
-                if (btnVoiceDrive) {
-                    btnVoiceDrive.addEventListener('click', function() {
-                        if (typeof gtag === 'function') {
-                            gtag('event', 'voice_studio_download_drive', {
-                                event_category: 'Voice Studio',
-                                event_label: 'Google Drive Speed Download',
-                                file_name: 'Voice_Studio_v1.0.zip'
-                            });
-                        }
-                    });
-                }
-
-                // 5. Theo dõi nút Tải Voice Studio dự phòng (GitHub)
-                const btnVoiceGithub = document.getElementById('btnDownloadGithub');
-                if (btnVoiceGithub) {
-                    btnVoiceGithub.addEventListener('click', function() {
-                        if (typeof gtag === 'function') {
-                            gtag('event', 'voice_studio_download_github', {
-                                event_category: 'Voice Studio',
-                                event_label: 'GitHub Server Download',
-                                file_name: 'Voice_Studio_v1.0.zip'
-                            });
-                        }
-                    });
-                }
-
-                // 6. Theo dõi khách bấm nhận Key Voice Studio qua Zalo
-                document.querySelectorAll('.vac-btn.vac-zalo').forEach(function(btn) {
-                    btn.addEventListener('click', function() {
-                        if (typeof gtag === 'function') {
-                            gtag('event', 'voice_studio_get_key_zalo', {
-                                event_category: 'Voice Studio',
-                                event_label: 'Zalo Community Group'
-                            });
-                        }
-                    });
-                });
-
-                // 7. Theo dõi khách bấm nhận Key Voice Studio qua Telegram
-                document.querySelectorAll('.vac-btn.vac-tele').forEach(function(btn) {
-                    btn.addEventListener('click', function() {
-                        if (typeof gtag === 'function') {
-                            gtag('event', 'voice_studio_get_key_telegram', {
-                                event_category: 'Voice Studio',
-                                event_label: 'Telegram Direct Message'
-                            });
-                        }
-                    });
-                });
-
-                // 8. Theo dõi nút Tải bản cài đặt chính Youtube Adung Commercial v1.2
-                const btnMainApp = document.getElementById('download-btn');
-                if (btnMainApp) {
-                    btnMainApp.addEventListener('click', function() {
-                        if (typeof gtag === 'function') {
-                            gtag('event', 'app_download_drive', {
-                                event_category: 'Youtube Adung App',
-                                event_label: 'Setup_Youtube_Adung_Commercial_v1.2.exe'
-                            });
-                        }
-                    });
+                    }, { passive: true });
                 }
             } catch (err) {
                 console.warn('[Analytics Error]', err);
