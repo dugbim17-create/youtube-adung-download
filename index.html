@@ -1,6 +1,19 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BNTRPJ6YL7"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-BNTRPJ6YL7', {
+        page_title: document.title,
+        page_location: window.location.href
+      });
+    </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Youtube Adung Commercial — Công Cụ Nghiên Cứu Ngách & Phân Tích Kịch Bản YouTube</title>
@@ -2072,6 +2085,118 @@
 
             window.addEventListener('scroll', updateActiveNav, { passive: true });
             updateActiveNav();
+
+            // ==========================================
+            // GA4 — EVENT TRACKING CHO VOICE STUDIO & APP
+            // ==========================================
+            try {
+                // 1. Theo dõi khi khách vào thẳng link có #voice-studio
+                if (window.location.hash === '#voice-studio' && typeof gtag === 'function') {
+                    gtag('event', 'voice_studio_direct_land', {
+                        event_category: 'Voice Studio',
+                        event_label: 'Direct Hash Visit'
+                    });
+                }
+
+                // 2. Theo dõi khi khách bấm menu "🎙️ Voice Studio" trên thanh điều hướng
+                document.querySelectorAll('a[href="#voice-studio"]').forEach(function(el) {
+                    el.addEventListener('click', function() {
+                        if (typeof gtag === 'function') {
+                            gtag('event', 'voice_studio_nav_click', {
+                                event_category: 'Voice Studio',
+                                event_label: 'Header Nav Click'
+                            });
+                        }
+                    });
+                });
+
+                // 3. Theo dõi khi khách cuộn màn hình tới khu vực Voice Studio (chỉ tính 1 lần / phiên)
+                const voiceSection = document.getElementById('voice-studio');
+                if (voiceSection && 'IntersectionObserver' in window) {
+                    let voiceViewed = false;
+                    const observer = new IntersectionObserver(function(entries) {
+                        entries.forEach(function(entry) {
+                            if (entry.isIntersecting && !voiceViewed) {
+                                voiceViewed = true;
+                                if (typeof gtag === 'function') {
+                                    gtag('event', 'voice_studio_view', {
+                                        event_category: 'Voice Studio',
+                                        event_label: 'Section In View'
+                                    });
+                                }
+                            }
+                        });
+                    }, { threshold: 0.25 });
+                    observer.observe(voiceSection);
+                }
+
+                // 4. Theo dõi nút Tải Voice Studio tốc độ cao (Google Drive)
+                const btnVoiceDrive = document.getElementById('btnDownloadVoice');
+                if (btnVoiceDrive) {
+                    btnVoiceDrive.addEventListener('click', function() {
+                        if (typeof gtag === 'function') {
+                            gtag('event', 'voice_studio_download_drive', {
+                                event_category: 'Voice Studio',
+                                event_label: 'Google Drive Speed Download',
+                                file_name: 'Voice_Studio_v1.0.zip'
+                            });
+                        }
+                    });
+                }
+
+                // 5. Theo dõi nút Tải Voice Studio dự phòng (GitHub)
+                const btnVoiceGithub = document.getElementById('btnDownloadGithub');
+                if (btnVoiceGithub) {
+                    btnVoiceGithub.addEventListener('click', function() {
+                        if (typeof gtag === 'function') {
+                            gtag('event', 'voice_studio_download_github', {
+                                event_category: 'Voice Studio',
+                                event_label: 'GitHub Server Download',
+                                file_name: 'Voice_Studio_v1.0.zip'
+                            });
+                        }
+                    });
+                }
+
+                // 6. Theo dõi khách bấm nhận Key Voice Studio qua Zalo
+                document.querySelectorAll('.vac-btn.vac-zalo').forEach(function(btn) {
+                    btn.addEventListener('click', function() {
+                        if (typeof gtag === 'function') {
+                            gtag('event', 'voice_studio_get_key_zalo', {
+                                event_category: 'Voice Studio',
+                                event_label: 'Zalo Community Group'
+                            });
+                        }
+                    });
+                });
+
+                // 7. Theo dõi khách bấm nhận Key Voice Studio qua Telegram
+                document.querySelectorAll('.vac-btn.vac-tele').forEach(function(btn) {
+                    btn.addEventListener('click', function() {
+                        if (typeof gtag === 'function') {
+                            gtag('event', 'voice_studio_get_key_telegram', {
+                                event_category: 'Voice Studio',
+                                event_label: 'Telegram Direct Message'
+                            });
+                        }
+                    });
+                });
+
+                // 8. Theo dõi nút Tải bản cài đặt chính Youtube Adung Commercial v1.2
+                const btnMainApp = document.getElementById('download-btn');
+                if (btnMainApp) {
+                    btnMainApp.addEventListener('click', function() {
+                        if (typeof gtag === 'function') {
+                            gtag('event', 'app_download_drive', {
+                                event_category: 'Youtube Adung App',
+                                event_label: 'Setup_Youtube_Adung_Commercial_v1.2.exe'
+                            });
+                        }
+                    });
+                }
+            } catch (err) {
+                console.warn('[Analytics Error]', err);
+            }
         });
     </script>
 </body>
