@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy — Adung &amp; YouTube Adung Commercial</title>
+    <meta name="description" content="Privacy Policy for Adung and YouTube Adung Commercial desktop software. Local-first architecture, encrypted licensing, and strict data protection.">
+    <!-- Favicon / Logo -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="icon" type="image/png" href="assets/app_icon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #090b10;
+            --card-bg: rgba(18, 22, 34, 0.75);
+            --card-border: rgba(255, 255, 255, 0.08);
+            --primary: #ff0055;
+            --cyan: #00e5ff;
+            --text: #f0f4fc;
+            --text-muted: #94a3b8;
+            --accent: #a855f7;
+        }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            font-size: 15px;
+            background-image: 
+                radial-gradient(circle at 15% 15%, rgba(168, 85, 247, 0.08) 0%, transparent 40%),
+                radial-gradient(circle at 85% 85%, rgba(0, 229, 255, 0.06) 0%, transparent 40%);
+            background-attachment: fixed;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .header {
+            border-bottom: 1px solid var(--card-border);
+            padding: 18px 0;
+            background: rgba(9, 11, 16, 0.85);
+            backdrop-filter: blur(12px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 24px;
+            width: 100%;
+        }
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: #fff;
+        }
+        .logo-img {
+            width: 34px;
+            height: 34px;
+            border-radius: 8px;
+        }
+        .logo-text {
+            font-size: 18px;
+            font-weight: 800;
+            letter-spacing: -0.3px;
+        }
+        .logo-text span {
+            color: var(--primary);
+        }
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 13.5px;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover {
+            color: #fff;
+        }
+        .btn-home {
+            padding: 6px 14px;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid var(--card-border);
+            color: #fff !important;
+        }
+        .main-content {
+            padding: 50px 0 80px;
+            flex: 1;
+        }
+        .policy-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            padding: 44px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+        .badge {
+            display: inline-block;
+            background: rgba(168, 85, 247, 0.15);
+            color: #d8b4fe;
+            border: 1px solid rgba(168, 85, 247, 0.35);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            margin-bottom: 14px;
+            letter-spacing: 0.5px;
+        }
+        h1 {
+            font-size: 32px;
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 10px;
+            letter-spacing: -0.5px;
+        }
+        .meta-date {
+            color: var(--text-muted);
+            font-size: 13.5px;
+            margin-bottom: 32px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--card-border);
+        }
+        h2 {
+            font-size: 20px;
+            font-weight: 700;
+            color: #fff;
+            margin: 32px 0 14px;
+        }
+        p {
+            color: #cbd5e1;
+            margin-bottom: 16px;
+        }
+        ul {
+            margin: 12px 0 18px 24px;
+            color: #cbd5e1;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        strong {
+            color: #fff;
+        }
+        .highlight-box {
+            background: rgba(0, 229, 255, 0.05);
+            border: 1px solid rgba(0, 229, 255, 0.2);
+            border-radius: 12px;
+            padding: 18px 22px;
+            margin: 22px 0;
+            font-size: 14px;
+        }
+        .highlight-box h4 {
+            color: var(--cyan);
+            font-size: 15px;
+            margin-bottom: 6px;
+            font-weight: 700;
+        }
+        footer {
+            border-top: 1px solid var(--card-border);
+            padding: 30px 0;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 13px;
+        }
+        footer a {
+            color: #d8b4fe;
+            text-decoration: none;
+        }
+        @media (max-width: 600px) {
+            .policy-card { padding: 24px; }
+            h1 { font-size: 26px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="container header-inner">
+            <a href="index.html" class="logo">
+                <img src="assets/app_icon.png" alt="Adung Logo" class="logo-img">
+                <div class="logo-text">YouTube <span>Adung</span></div>
+            </a>
+            <div class="nav-links">
+                <a href="index.html" class="btn-home">← Back to Home</a>
+                <a href="terms.html">Terms of Service</a>
+                <a href="mailto:founder@adung.top">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <div class="policy-card">
+                <span class="badge">LEGAL COMPLIANCE</span>
+                <h1>Privacy Policy</h1>
+                <div class="meta-date">Last Updated: October 2026 • Effective Date: October 2026 • Entity: Adung Software Labs</div>
+
+                <p>Welcome to <strong>Adung</strong> ("we", "us", "our"). We are an independent, bootstrapped software startup based in Vietnam, operating the website <a href="https://adung.top" style="color: #38bdf8;">https://adung.top</a> and developing <strong>YouTube Adung Commercial</strong> desktop workstation software.</p>
+
+                <p>Your privacy and intellectual property are our highest priorities. This Privacy Policy explains our transparent data practices, our local-first privacy architecture, and how we handle user information in compliance with international privacy standards.</p>
+
+                <h2>1. Core Architecture: Local-First Privacy Guarantee</h2>
+                <div class="highlight-box">
+                    <h4>🔒 Local-First Security Principle</h4>
+                    <p style="margin-bottom: 0;">YouTube Adung Commercial is engineered as a local-first desktop application. Your proprietary research data, video scripts, competitor watchlists, and AI credentials stay on your machine. We do not operate cloud databases that ingest or harvest your creative work.</p>
+                </div>
+                <p>Specifically:</p>
+                <ul>
+                    <li><strong>API Credentials:</strong> Your private API keys (Anthropic Claude API, Google Gemini API, YouTube Data API v3) are stored strictly on your local PC. On Windows, they are encrypted using hardware-backed <strong>DPAPI (Data Protection API) with AES-256</strong>. They are never sent to Adung servers.</li>
+                    <li><strong>Research &amp; Scripts:</strong> All video scripts, keyword caches, and analytical reports generated in the app are saved exclusively to your local SQLite databases and local disk.</li>
+                </ul>
+
+                <h2>2. Information We Collect and Process</h2>
+                <p>We collect only the minimal data required to provide legitimate software licensing and customer support:</p>
+                <ul>
+                    <li><strong>Licensing &amp; Entitlement Data:</strong> When activating YouTube Adung Commercial, the application contacts our Supabase authentication gateway to verify your license key and an irreversible, anonymized Hardware Identifier (HWID hash). This ensures one-device-per-license integrity and anti-piracy protection.</li>
+                    <li><strong>Direct Communications:</strong> If you contact us via email (<a href="mailto:founder@adung.top" style="color: #d8b4fe;">founder@adung.top</a>), Telegram, or Zalo, we retain your message and contact details solely to deliver technical support and license fulfillment.</li>
+                    <li><strong>Website Analytics:</strong> Our public website (<code>adung.top</code>) utilizes Google Analytics 4 to aggregate anonymous traffic statistics (such as page views, visitor country, and browser type) to improve user experience. No personal identifying information is stored.</li>
+                </ul>
+
+                <h2>3. Third-Party AI Services &amp; APIs</h2>
+                <p>When you use AI-assisted capabilities within YouTube Adung Commercial (such as Claude AI script synthesis or Gemini title ideation), the request is transmitted directly from your client machine to the designated provider's official API endpoint:</p>
+                <ul>
+                    <li><strong>Anthropic Claude API:</strong> Governed by <a href="https://www.anthropic.com/legal/privacy" target="_blank" style="color: #38bdf8;">Anthropic's Commercial Privacy Policy</a>. Commercial API prompts are not used by Anthropic to train foundation models.</li>
+                    <li><strong>Google Cloud &amp; YouTube Data API v3:</strong> Governed by the <a href="https://policies.google.com/privacy" target="_blank" style="color: #38bdf8;">Google Privacy Policy</a> and YouTube API Services Terms.</li>
+                </ul>
+
+                <h2>4. Cookies &amp; Tracking Technologies</h2>
+                <p>Our website uses standard essential cookies and Google Analytics measurement tags. You can instruct your browser to refuse all cookies or to indicate when a cookie is being sent. Doing so will not impair your ability to download our desktop software.</p>
+
+                <h2>5. Data Retention &amp; International Compliance (GDPR &amp; CCPA)</h2>
+                <p>We respect your privacy rights under the European General Data Protection Regulation (GDPR) and the California Consumer Privacy Act (CCPA):</p>
+                <ul>
+                    <li><strong>Right to Access &amp; Portability:</strong> You may request a copy of the license records associated with your account.</li>
+                    <li><strong>Right to Rectification &amp; Erasure:</strong> You may request the deletion or hardware re-binding of your license records at any time by emailing us.</li>
+                    <li><strong>No Sale of Personal Data:</strong> We never sell, rent, monetize, or broker personal or usage data to third-party advertisers.</li>
+                </ul>
+
+                <h2>6. Security Measures</h2>
+                <p>We employ modern security safeguards, including TLS 1.3 encryption across all web endpoints, encrypted licensing handshakes, and strict least-privilege administrative access.</p>
+
+                <h2>7. Contact the Founder &amp; Entity</h2>
+                <p>If you have any questions, verification requests, or data privacy inquiries, please contact our founder directly:</p>
+                <ul>
+                    <li><strong>Entity:</strong> Adung (Software &amp; Creator Labs)</li>
+                    <li><strong>Founder:</strong> Anh Dung</li>
+                    <li><strong>Official Contact Email:</strong> <a href="mailto:founder@adung.top" style="color: #d8b4fe; font-weight: 700;">founder@adung.top</a></li>
+                    <li><strong>Location:</strong> Vietnam</li>
+                    <li><strong>Website:</strong> <a href="https://adung.top" style="color: #38bdf8;">https://adung.top</a></li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 Adung Software Labs. All rights reserved. • <a href="index.html">Home</a> • <a href="terms.html">Terms of Service</a> • <a href="mailto:founder@adung.top">founder@adung.top</a></p>
+        </div>
+    </footer>
+
+</body>
+</html>
