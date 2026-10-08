@@ -41,9 +41,10 @@ Adung adopts Anthropic's open-source **Model Context Protocol (MCP)** standard t
   "mcpServers": {
     "adung-youtube": {
       "command": "python",
-      "args": ["-m", "app.mcp_server.server"],
+      "args": ["-m", "adung_mcp.server"],
       "env": {
-        "ADUNG_LOCAL_PORT": "8000"
+        "ADUNG_HOST": "127.0.0.1",
+        "ADUNG_PORT": "8000"
       }
     }
   }
@@ -52,14 +53,14 @@ Adung adopts Anthropic's open-source **Model Context Protocol (MCP)** standard t
 
 - **BYOK (Bring Your Own Key):** Users configure their own Claude API credentials locally.
 - **Privacy:** Analysis happens locally on the desktop; credentials never traverse intermediary cloud servers.
-- **Workflow Tools:** Exposes tools for transcript ingestion, narrative outline generation, and competitor keyword velocity to Claude.
+- **Workflow Tools:** Exposes tools for transcript ingestion, creator-led outline development, and competitor keyword velocity to Claude.
 
 ---
 
 ## Releases & Downloads
 
 - **Direct Download (v1.2):** [Google Drive Official Mirror](https://drive.google.com/file/d/11K-27Hlk_PLbA05L8D087sjsTE-plGSR/view?usp=sharing)
-- **GitHub Release Binary:** [Setup_Youtube_Adung_Commercial_v1.2.exe](https://github.com/dugbim17-create/youtube-adung-download/releases/download/v1.2/Setup_Youtube_Adung_Commercial_v1.2.exe)
+- **GitHub Release Binary:** [Setup_Youtube_Adung_Commercial_v1.2.exe](https://github.com/AdungApp/youtube-adung/releases/download/v1.2/Setup_Youtube_Adung_Commercial_v1.2.exe)
 - **Package Size:** 107 MB (Bundled self-contained Windows runtime)
 
 ---
