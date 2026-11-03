@@ -14,6 +14,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/adung-consent.css">
     <style>
         :root {
             --bg: #090b10;
@@ -219,7 +220,7 @@
 
                 <p>Welcome to <strong>Adung</strong> ("we", "us", "our"). We are an independent, bootstrapped software startup based in Vietnam, operating the website <a href="https://adung.top" style="color: #38bdf8;">https://adung.top</a> and developing <strong>YouTube Adung Commercial</strong> desktop workstation software.</p>
 
-                <p>Your privacy and intellectual property are our highest priorities. This Privacy Policy explains our transparent data practices, our local-first privacy architecture, and how we handle user information in compliance with international privacy standards.</p>
+                <p>Your privacy and intellectual property are our highest priorities. This English page is a bilingual copy. For users in Vietnam, the <a href="privacy-vi.html" style="color:#d8b4fe;">Vietnamese data-protection notice</a> controls when the two differ.</p>
 
                 <h2>1. Core Architecture: Local-First Privacy Guarantee</h2>
                 <div class="highlight-box">
@@ -237,7 +238,7 @@
                 <ul>
                     <li><strong>Licensing &amp; Entitlement Data:</strong> When activating YouTube Adung Commercial, the application contacts our Supabase authentication gateway to verify your license key and an irreversible, anonymized Hardware Identifier (HWID hash). This ensures one-device-per-license integrity and anti-piracy protection.</li>
                     <li><strong>Direct Communications:</strong> If you contact us via email (<a href="mailto:founder@adung.top" style="color: #d8b4fe;">founder@adung.top</a>), Telegram, or Zalo, we retain your message and contact details solely to deliver technical support and license fulfillment.</li>
-                    <li><strong>Website Analytics:</strong> Our public website (<code>adung.top</code>) utilizes Google Analytics 4 to aggregate anonymous traffic statistics (such as page views, visitor country, and browser type) to improve user experience. No personal identifying information is stored.</li>
+                    <li><strong>Website Analytics:</strong> Our public website (<code>adung.top</code>) loads Google Analytics 4 only after the visitor allows measurement. It aggregates traffic statistics (such as page views, visitor country, and browser type). No personal identifying information is stored.</li>
                 </ul>
 
                 <h2>3. Third-Party AI Services &amp; APIs</h2>
@@ -248,7 +249,7 @@
                 </ul>
 
                 <h2>4. Cookies &amp; Tracking Technologies</h2>
-                <p>Our website uses standard essential cookies and Google Analytics measurement tags. You can instruct your browser to refuse all cookies or to indicate when a cookie is being sent. Doing so will not impair your ability to download our desktop software.</p>
+                <p>Google Analytics does not load until the visitor chooses “Allow measurement” in the consent banner. Declining still leaves downloads and page access available. The choice is stored in this browser and can be changed from the banner link. See the <a href="privacy-vi.html" style="color:#d8b4fe;">Vietnamese notice</a> for the Vietnam-facing rules.</p>
 
                 <h2>5. Data Retention &amp; International Compliance (GDPR &amp; CCPA)</h2>
                 <p>We respect your privacy rights under the European General Data Protection Regulation (GDPR) and the California Consumer Privacy Act (CCPA):</p>
@@ -280,9 +281,10 @@
 
     <footer>
         <div class="container">
-            <p>© 2024–2026 Adung. All rights reserved. • <a href="index.html">Home</a> • <a href="terms.html">Terms of Service</a> • <a href="mailto:founder@adung.top">founder@adung.top</a></p>
+            <p>© 2024–2026 Adung. All rights reserved. • <a href="index.html">Home</a> • <a href="privacy-vi.html">Chính sách dữ liệu</a> • <a href="terms.html">Terms of Service</a> • <a href="mailto:founder@adung.top">founder@adung.top</a></p>
+            <p><button type="button" onclick="adungOpenConsent()" style="background:none;border:0;color:#d8b4fe;cursor:pointer;font:inherit;">Cookie choice</button></p>
         </div>
     </footer>
-
+    <script src="assets/adung-consent.js"></script>
 </body>
 </html>

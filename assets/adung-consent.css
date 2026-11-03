@@ -1,0 +1,38 @@
+#adung-consent {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  z-index: 9999;
+  width: min(440px, calc(100vw - 32px));
+  padding: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 14px;
+  background: rgba(9, 11, 16, 0.96);
+  color: #e2e8f0;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+  font-family: "Plus Jakarta Sans", "Be Vietnam Pro", sans-serif;
+}
+#adung-consent[hidden] { display: none; }
+#adung-consent p {
+  margin: 0 0 12px;
+  font-size: 14px;
+  line-height: 1.55;
+}
+#adung-consent a { color: #d8b4fe; }
+#adung-consent div { display: flex; gap: 8px; justify-content: flex-end; }
+#adung-consent button {
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+#adung-consent button[data-adung-consent="denied"] {
+  background: transparent;
+  color: #e2e8f0;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+#adung-consent button[data-adung-consent="granted"] {
+  background: #7c3aed;
+  color: white;
+  border: 0;
+}
