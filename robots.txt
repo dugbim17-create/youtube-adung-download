@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
+Disallow: /vi.html
+Disallow: /privacy-vi.html
+Disallow: /terms-vi.html
 
 Sitemap: https://adung.top/sitemap.xml

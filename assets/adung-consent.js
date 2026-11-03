@@ -46,8 +46,8 @@
 
   function mount() {
     if (document.getElementById("adung-consent")) return;
-    var lang = (document.documentElement.lang || "vi").toLowerCase();
-    var vi = lang.indexOf("vi") === 0;
+    var lang = "en";
+    var vi = false;
     var bar = document.createElement("aside");
     bar.id = "adung-consent";
     bar.setAttribute("role", "dialog");
@@ -55,7 +55,7 @@
     bar.innerHTML =
       '<p>' + (vi
         ? 'Adung chỉ bật Google Analytics sau khi anh/chị đồng ý. Cookie này đo trang xem và nút bấm, không bắt buộc để tải phần mềm. Xem <a href="privacy-vi.html">Chính sách bảo vệ dữ liệu</a>.'
-        : 'Adung loads Google Analytics only after you agree. It measures page views and button clicks, and is not required to download the software. See the <a href="privacy-vi.html">Vietnamese data-protection notice</a>.') +
+        : 'Adung loads Google Analytics only after you agree. It measures page views and button clicks. See the <a href="privacy.html">privacy notice</a>.') +
       '</p>' +
       '<div>' +
         '<button type="button" data-adung-consent="denied">' + (vi ? "Từ chối" : "Decline") + '</button>' +
