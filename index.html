@@ -5,14 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adung — AI-Powered YouTube Content Intelligence &amp; Script Production</title>
-    <meta name="description" content="Adung is an independent bootstrapped software startup based in Vietnam. Creator intelligence, YouTube niche research, and automated AI video script workflows.">
+    <meta name="description" content="Adung is an independent software project based in Vietnam. Creator intelligence, YouTube niche research, and automated AI video script workflows. Trial download page, not a store.">
     <meta name="keywords" content="Adung, YouTube Adung, YouTube Content Intelligence, YouTube Niche Research, AI Script Generator, Claude AI Integration, Creator Automation">
     <meta name="author" content="Dung Duy - Founder &amp; Lead Developer">
     <!-- Open Graph / Meta -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://adung.top/">
     <meta property="og:title" content="Adung — AI-Powered YouTube Content Intelligence &amp; Script Production">
-    <meta property="og:description" content="Independent bootstrapped software startup empowering digital creators with deterministic video intelligence and Claude AI script generation.">
+    <meta property="og:description" content="Independent software project for digital creators: video intelligence and Claude AI script workflows. Trial download page, not a store.">
     <meta property="og:image" content="https://adung.top/assets/app_icon.png">
     <link rel="canonical" href="https://adung.top/">
     <!-- Schema.org JSON-LD for Automated Verification Crawlers -->
@@ -24,7 +24,7 @@
           "@type": "Organization",
           "@id": "https://adung.top/#organization",
           "name": "Adung",
-          "alternateName": "Adung Startup",
+          "alternateName": "Adung",
           "url": "https://adung.top/",
           "logo": "https://adung.top/assets/app_icon.png",
           "email": "founder@adung.top",
@@ -44,7 +44,7 @@
             "@type": "PostalAddress",
             "addressCountry": "VN"
           },
-          "description": "Independent bootstrapped software startup developing AI-powered YouTube content intelligence and creator workstation software."
+          "description": "Independent software project developing AI-powered YouTube content intelligence and creator workstation software. This website offers a trial download and is not a store."
         },
         {
           "@type": "SoftwareApplication",
@@ -52,11 +52,6 @@
           "name": "YouTube Adung Commercial",
           "operatingSystem": "Windows 10, Windows 11",
           "applicationCategory": "BusinessApplication",
-          "offers": {
-            "@type": "Offer",
-            "price": "0",
-            "priceCurrency": "USD"
-          },
           "publisher": {
             "@id": "https://adung.top/#organization"
           }
@@ -973,181 +968,6 @@
             border-right: 1px solid rgba(0, 229, 255, 0.15);
         }
 
-        /* PRICING SECTION */
-        .pricing-section {
-            padding: 60px 0;
-        }
-
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 22px;
-            margin-top: 36px;
-        }
-
-        .pricing-card {
-            background: var(--card-bg);
-            border: 1px solid var(--card-border);
-            border-radius: 18px;
-            padding: 30px 24px;
-            display: flex;
-            flex-direction: column;
-            position: relative;
-            transition: all 0.3s ease;
-        }
-
-        .pricing-card:hover {
-            transform: translateY(-4px);
-            border-color: rgba(255, 255, 255, 0.22);
-            box-shadow: 0 16px 36px rgba(0, 0, 0, 0.4);
-        }
-
-        .pricing-card.featured {
-            background: linear-gradient(180deg, rgba(255, 0, 85, 0.08) 0%, rgba(18, 22, 34, 0.85) 100%);
-            border: 1px solid rgba(255, 0, 85, 0.35);
-            box-shadow: 0 10px 30px rgba(255, 0, 85, 0.15);
-        }
-
-        .pricing-card.featured:hover {
-            border-color: rgba(255, 0, 85, 0.6);
-            box-shadow: 0 18px 45px rgba(255, 0, 85, 0.25);
-        }
-
-        .card-pill-tag {
-            align-self: flex-start;
-            font-size: 11px;
-            font-weight: 700;
-            padding: 4px 10px;
-            border-radius: 20px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 14px;
-        }
-
-        .pill-gray { background: rgba(255, 255, 255, 0.06); color: #cbd5e1; border: 1px solid rgba(255, 255, 255, 0.12); }
-        .pill-hot { background: rgba(255, 0, 85, 0.2); color: #ff3377; border: 1px solid rgba(255, 0, 85, 0.4); }
-        .pill-save { background: rgba(245, 158, 11, 0.15); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.3); }
-        .pill-vip { background: rgba(121, 40, 202, 0.2); color: #c084fc; border: 1px solid rgba(121, 40, 202, 0.35); }
-
-        .pricing-title {
-            font-size: 19px;
-            font-weight: 800;
-            color: #fff;
-            margin-bottom: 6px;
-        }
-
-        .pricing-price-box {
-            margin: 16px 0 12px;
-            display: flex;
-            align-items: baseline;
-            gap: 6px;
-        }
-
-        .pricing-price {
-            font-size: 34px;
-            font-weight: 800;
-            color: #fff;
-            letter-spacing: -0.5px;
-        }
-
-        .pricing-price.text-lg {
-            font-size: 28px;
-            color: #c084fc;
-        }
-
-        .pricing-period {
-            font-size: 13px;
-            color: var(--text-muted);
-            font-weight: 500;
-        }
-
-        .pricing-subnote {
-            font-size: 12.5px;
-            color: #38bdf8;
-            margin-bottom: 22px;
-            font-weight: 600;
-        }
-
-        .pricing-features {
-            list-style: none;
-            margin-bottom: 26px;
-            flex-grow: 1;
-        }
-
-        .pricing-features li {
-            font-size: 13.5px;
-            color: #cbd5e1;
-            margin-bottom: 10px;
-            display: flex;
-            align-items: flex-start;
-            gap: 8px;
-            line-height: 1.5;
-        }
-
-        .pricing-features li::before {
-            content: "✓";
-            color: #10b981;
-            font-weight: 800;
-        }
-
-        .btn-pricing {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 12px 18px;
-            border-radius: 10px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 14px;
-            text-align: center;
-            transition: all 0.2s ease;
-            width: 100%;
-        }
-
-        .btn-pricing-default {
-            background: rgba(255, 255, 255, 0.08);
-            color: #fff;
-            border: 1px solid var(--card-border);
-        }
-
-        .btn-pricing-default:hover {
-            background: rgba(255, 255, 255, 0.16);
-            border-color: rgba(255, 255, 255, 0.3);
-        }
-
-        .btn-pricing-hot {
-            background: linear-gradient(135deg, #ff0055 0%, #7928ca 100%);
-            color: #fff;
-            box-shadow: 0 4px 15px rgba(255, 0, 85, 0.35);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-        }
-
-        .btn-pricing-hot:hover {
-            transform: scale(1.02);
-            box-shadow: 0 6px 20px rgba(255, 0, 85, 0.5);
-        }
-
-        .trial-callout {
-            background: rgba(16, 185, 129, 0.08);
-            border: 1px solid rgba(16, 185, 129, 0.25);
-            border-radius: 14px;
-            padding: 16px 24px;
-            text-align: center;
-            margin-top: 30px;
-            font-size: 14.5px;
-            color: #a7f3d0;
-        }
-
-        .trial-callout strong {
-            color: #fff;
-        }
-
-        .trial-callout a {
-            color: var(--cyan);
-            text-decoration: underline;
-            font-weight: 700;
-        }
-
         /* 3 STEPS */
         .steps-section {
             padding: 50px 0;
@@ -1656,7 +1476,6 @@
             <nav class="nav-menu">
                 <a href="#tinh-nang" class="nav-link">✨ Features</a>
                 <a href="#so-sanh" class="nav-link">⚖️ Comparison</a>
-                <a href="#bang-gia" class="nav-link">🏷️ Pricing</a>
                 <a href="#voice-studio" class="nav-link nav-link-voice">🎙️ Voice Studio <span class="nav-free-badge">Free</span></a>
                 <a href="huong-dan-lay-api.html" class="nav-link" target="_blank" style="color: #38bdf8; font-weight: 700;">📖 API Guide</a>
                 <a href="#huong-dan" class="nav-link">🚀 Setup</a>
@@ -1689,7 +1508,6 @@
         <!--/email_off-->
         <a href="#tinh-nang" class="nav-link">✨ Features</a>
         <a href="#so-sanh" class="nav-link">⚖️ Comparison</a>
-        <a href="#bang-gia" class="nav-link">🏷️ Pricing</a>
         <a href="huong-dan-lay-api.html" class="nav-link" target="_blank" style="color: #38bdf8; font-weight: 700;">📖 API Guide</a>
         <a href="#voice-studio" class="nav-link nav-link-voice">🎙️ Voice Studio (Free)</a>
         <a href="#huong-dan" class="nav-link">🚀 Setup</a>
@@ -2030,12 +1848,6 @@
                             <td>Generic keyword suggestions without dedicated niche taxonomy</td>
                         </tr>
                         <tr>
-                            <td>Investment / Pricing</td>
-                            <td>$0 (at the cost of dozens of manual research hours)</td>
-                            <td>Ultra affordable ($2–$6/mo) designed for indie creators &amp; small teams</td>
-                            <td>Expensive Pro/Boost plans: $49 to $99/month ($600–$1,200/year)</td>
-                        </tr>
-                        <tr>
                             <td>Language &amp; Support</td>
                             <td>Self-service community guides and forums</td>
                             <td>Bilingual EN/VI interface, direct support via Founder Email, Zalo &amp; Telegram</td>
@@ -2044,110 +1856,6 @@
                     </tbody>
                 </table>
             </div>
-        </div>
-    </section>
-
-    <!-- PRICING SECTION -->
-    <section class="container pricing-section" id="bang-gia">
-        <div class="section-header">
-            <span class="sub-badge">FLEXIBLE & AFFORDABLE PRICING</span>
-            <h2>Transparent Pricing for Solo Creators &amp; Media Teams</h2>
-            <p>All plans include full 100% access to all features, script extraction, and niche discovery engines. A 3-day free trial is available before purchase. Prices below are proposed prices. As of 3 November 2026, no paid license has been sold.</p>
-        </div>
-
-        <div class="pricing-grid">
-            <!-- GÓI 1: TUẦN -->
-            <div class="pricing-card">
-                <span class="card-pill-tag pill-gray">Quick Test</span>
-                <div class="pricing-title">Weekly Pass</div>
-                <div class="pricing-price-box">
-                    <span class="pricing-price">$2 USD</span>
-                    <span class="pricing-period">/ 7 days</span>
-                </div>
-                <div class="pricing-subnote">~49,000 VND (~$0.30/day)</div>
-                <ul class="pricing-features">
-                    <li>100% full access to all premium features</li>
-                    <li>Unlimited video transcript &amp; script extraction</li>
-                    <li>Emerging channel filter &amp; viral outlier detection</li>
-                    <li>Full library of 110 curated niches &amp; outlier radar</li>
-                    <li>Instant license activation within 5 minutes</li>
-                </ul>
-                <a href="https://zalo.me/g/m2hdhe9f76gqjuyofjxi" target="_blank" class="btn-pricing btn-pricing-default">
-                    Get Weekly Pass
-                </a>
-            </div>
-
-            <!-- GÓI 2: THÁNG (BÁN CHẠY NHẤT) -->
-            <div class="pricing-card featured">
-                <span class="card-pill-tag pill-hot">Suggested plan</span>
-                <div class="pricing-title">Monthly Pro</div>
-                <div class="pricing-price-box">
-                    <span class="pricing-price">$6 USD</span>
-                    <span class="pricing-period">/ 30 days</span>
-                </div>
-                <div class="pricing-subnote">~149,000 VND (~$0.20/day)</div>
-                <ul class="pricing-features">
-                    <li>100% full access to all premium features</li>
-                    <li>Unlimited video transcript &amp; script extraction</li>
-                    <li>Faceless AI niche libraries &amp; bilingual keyword search</li>
-                    <li>Global YouTube Trending scanner &amp; Google Trends integration</li>
-                    <li>All software updates &amp; performance patches for 30 days</li>
-                    <li>Direct 1-on-1 support via Email, Zalo &amp; Telegram</li>
-                </ul>
-                <a href="https://zalo.me/g/m2hdhe9f76gqjuyofjxi" target="_blank" class="btn-pricing btn-pricing-hot">
-                    Get Monthly Pro
-                </a>
-            </div>
-
-            <!-- GÓI 3: NĂM (TIẾT KIỆM NHẤT) -->
-            <div class="pricing-card">
-                <span class="card-pill-tag pill-save">⭐ Best Value (Save 55%)</span>
-                <div class="pricing-title">Annual License</div>
-                <div class="pricing-price-box">
-                    <span class="pricing-price">$29 USD</span>
-                    <span class="pricing-period">/ 12 months</span>
-                </div>
-                <div class="pricing-subnote">~790,000 VND (Only ~$2.40/month)</div>
-                <ul class="pricing-features">
-                    <li>Save over 55% compared to monthly renewals</li>
-                    <li>Full 365-day access with priority version updates</li>
-                    <li>Free hardware ID (HWID) transfers when upgrading PC</li>
-                    <li>Unlimited deep Excel/CSV report exports</li>
-                    <li>Complimentary Voice Studio Offline Standalone engine</li>
-                    <li>VIP priority 1-on-1 technical support</li>
-                </ul>
-                <a href="https://zalo.me/g/m2hdhe9f76gqjuyofjxi" target="_blank" class="btn-pricing btn-pricing-default">
-                    Get Annual License
-                </a>
-            </div>
-
-            <!-- GÓI 4: VĨNH VIỄN (STUDIO / ĐỘI NHÓM) -->
-            <div class="pricing-card">
-                <span class="card-pill-tag pill-vip">🏢 Studio &amp; Teams</span>
-                <div class="pricing-title">Lifetime Pass</div>
-                <div class="pricing-price-box">
-                    <span class="pricing-price text-lg">Custom</span>
-                    <span class="pricing-period">/ Lifetime</span>
-                </div>
-                <div class="pricing-subnote">Tailored for video agencies &amp; multi-seat teams</div>
-                <ul class="pricing-features">
-                    <li>One-time payment — Lifetime access with zero recurring fees</li>
-                    <li>Multi-seat volume licensing for studios &amp; agencies</li>
-                    <li>Free lifetime updates to all future major versions</li>
-                    <li>Dedicated support and custom feature requests</li>
-                </ul>
-                <!--email_off-->
-                <a href="mailto:founder@adung.top" class="btn-pricing btn-pricing-default">
-                    Contact for Studio License (founder@adung.top)
-                </a>
-                <!--/email_off-->
-            </div>
-        </div>
-
-        <div class="trial-callout">
-            <!--email_off-->
-            🎁 <strong>Want to test before purchasing?</strong> Join our <a href="https://zalo.me/g/m2hdhe9f76gqjuyofjxi" target="_blank">Zalo Support Group</a>, message Telegram <a href="https://t.me/SHIB_GOD68" target="_blank">@SHIB_GOD68</a>, or email Founder directly at <a href="mailto:founder@adung.top" style="color: #d8b4fe; font-weight: 700;">founder@adung.top</a> to get your <strong>FREE 3-DAY TRIAL LICENSE KEY</strong>!
-            <!--/email_off-->
         </div>
     </section>
 
@@ -2304,13 +2012,13 @@
             <div class="about-grid">
                 <div class="about-card">
                     <div style="font-size: 30px; margin-bottom: 14px;">🚀</div>
-                    <h3 style="font-size: 18px; font-weight: 700; color: #fff; margin-bottom: 10px;">Our Startup</h3>
+                    <h3 style="font-size: 18px; font-weight: 700; color: #fff; margin-bottom: 10px;">The Project</h3>
                     <p style="color: var(--text-muted); font-size: 14px; line-height: 1.6;">
-                        <strong>Adung</strong> is an independent bootstrapped software startup based in Vietnam, founded in 2024. We engineer high-performance creator intelligence software, bridging raw video analytics and LLM reasoning pipelines.
+                        <strong>Adung</strong> is an independent software project based in Vietnam, started in 2024. This website offers a trial download. It is not a store.
                     </p>
                     <div style="margin-top: 16px; font-size: 13px; color: #94a3b8; line-height: 1.8;">
-                        <div>• <strong>Brand / Startup:</strong> Adung</div>
-                        <div>• <strong>Stage:</strong> Independent, Bootstrapped</div>
+                        <div>• <strong>Project:</strong> Adung</div>
+                        <div>• <strong>Stage:</strong> Independent project, not a store</div>
                         <div>• <strong>Location:</strong> Vietnam</div>
                     </div>
                 </div>
@@ -2323,7 +2031,7 @@
                     </p>
                     <div style="margin-top: 16px; font-size: 13px; color: #94a3b8; line-height: 1.8;">
                         <div>• <strong>AI Engine:</strong> Integrated with Anthropic Claude &amp; Google Gemini</div>
-                        <div>• <strong>Architecture:</strong> Local-first with encrypted hardware-bound licensing</div>
+                        <div>• <strong>Architecture:</strong> Local-first desktop app with a hardware-bound trial key</div>
                     </div>
                 </div>
 
@@ -2368,14 +2076,14 @@
                 <p>YouTube Adung Commercial is fully optimized for Windows 10 and Windows 11 (64-bit).</p>
             </div>
             <div class="faq-item">
-                <h4>How do I obtain a trial license or activate a subscription?</h4>
+                <h4>How do I obtain a trial key?</h4>
                 <!--email_off-->
-                <p>You can contact our founder team directly via email at <a href="mailto:founder@adung.top" style="color: #d8b4fe; font-weight: 700; text-decoration: none;">founder@adung.top</a>, our <a href="https://zalo.me/g/m2hdhe9f76gqjuyofjxi" target="_blank" style="color: #38bdf8; font-weight: 700; text-decoration: none;">Zalo Group</a>, or Telegram <strong>@SHIB_GOD68</strong> for immediate license generation.</p>
+                <p>You can contact our founder team directly via email at <a href="mailto:founder@adung.top" style="color: #d8b4fe; font-weight: 700; text-decoration: none;">founder@adung.top</a>, our <a href="https://zalo.me/g/m2hdhe9f76gqjuyofjxi" target="_blank" style="color: #38bdf8; font-weight: 700; text-decoration: none;">Zalo Group</a>, or Telegram <strong>@SHIB_GOD68</strong> for a trial key.</p>
                 <!--/email_off-->
             </div>
             <div class="faq-item">
-                <h4>Can a single license be used across multiple devices?</h4>
-                <p>To maintain data integrity and security, each license is linked to one primary machine hardware ID. If you change your workstation, simply contact us to rebind your license in under 2 minutes.</p>
+                <h4>Can one trial key be used across multiple devices?</h4>
+                <p>To maintain data integrity and security, each trial key is linked to one primary machine hardware ID. If you change your workstation, contact us to rebind it.</p>
             </div>
         </div>
     </section>
@@ -2505,7 +2213,6 @@
                         'download': '⚡ Tải Về Cài Đặt v1.2',
                         'tinh-nang': '✨ Features Đột Phá',
                         'so-sanh': '⚖️ Comparison Phiên Bản',
-                        'bang-gia': '🏷️ Pricing Bản Quyền',
                         'voice-studio': '🎙️ Voice Studio Free Lead Magnet',
                         'huong-dan': '🚀 3 Bước Bắt Đầu & Hướng Dẫn',
                         'faq': '❓ Câu Hỏi Thường Gặp (FAQ)'
@@ -2586,27 +2293,10 @@
                         });
                     });
 
-                    // 5. Theo dõi MỌI nút bấm trên Bảng Giá (Weekly Pass, Monthly Pro, 6 Tháng, Năm, Vĩnh Viễn)
-                    document.querySelectorAll('.pricing-card').forEach(function(card) {
-                        const titleEl = card.querySelector('.pricing-title');
-                        const priceEl = card.querySelector('.pricing-price');
-                        const planBtn = card.querySelector('.btn-pricing');
-                        if (planBtn) {
-                            planBtn.addEventListener('click', function() {
-                                const planName = titleEl ? titleEl.textContent.trim() : 'Gói phần mềm';
-                                const planPrice = priceEl ? priceEl.textContent.trim() : '';
-                                gtag('event', 'select_pricing_plan', {
-                                    plan_name: planName,
-                                    plan_price: planPrice
-                                });
-                            });
-                        }
-                    });
-
                     // 6. Theo dõi MỌI nút liên hệ tư vấn (Zalo, Telegram) trên toàn bộ trang
                     document.querySelectorAll('a[href*="zalo.me"]').forEach(function(btn) {
                         btn.addEventListener('click', function() {
-                            const pos = btn.closest('#voice-studio') ? 'Voice Studio' : (btn.closest('#bang-gia') ? 'Bảng Giá' : (btn.closest('header') ? 'Header' : 'Chân Trang'));
+                            const pos = btn.closest('#voice-studio') ? 'Voice Studio' : (btn.closest('header') ? 'Header' : 'Chân Trang');
                             gtag('event', 'contact_zalo_click', {
                                 position: pos,
                                 contact_url: btn.href
@@ -2616,7 +2306,7 @@
 
                     document.querySelectorAll('a[href*="t.me"]').forEach(function(btn) {
                         btn.addEventListener('click', function() {
-                            const pos = btn.closest('#voice-studio') ? 'Voice Studio' : (btn.closest('#bang-gia') ? 'Bảng Giá' : (btn.closest('header') ? 'Header' : 'Chân Trang'));
+                            const pos = btn.closest('#voice-studio') ? 'Voice Studio' : (btn.closest('header') ? 'Header' : 'Chân Trang');
                             gtag('event', 'contact_telegram_click', {
                                 position: pos,
                                 contact_url: btn.href
