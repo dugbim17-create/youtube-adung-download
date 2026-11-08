@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BNTRPJ6YL7"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag("js", new Date());
+      gtag("config", "G-BNTRPJ6YL7", {
+        page_title: document.title,
+        page_location: window.location.href
+      });
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adung Studio Book — Native Desktop AI Audiobook & Narrative Audio Suite</title>
+    <meta name="description" content="Adung Studio Book is a standalone Windows desktop workstation for indie authors and storytellers. Turn manuscripts into cinematic multi-voice audiobooks powered by ElevenLabs Voice AI.">
+    <meta name="keywords" content="Adung Studio Book, Audiobook Production, ElevenLabs Voice AI, AI Voice Acting, Multi-Voice Narration, Indie Authors, ACX Compliance, Text to Speech">
+    <meta name="author" content="Dung Duy - Founder & Lead Developer">
+    <link rel="canonical" href="https://adung.top/book.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://adung.top/book.html">
+    <meta property="og:title" content="Adung Studio Book — Desktop Audio Workstation for Storytellers">
+    <meta property="og:description" content="Turn long-form manuscripts into broadcast-ready audiobooks with multi-character AI voice acting powered by ElevenLabs.">
+    <meta property="og:image" content="https://adung.top/assets/adung_studio_book_icon.png">
+    <link rel="icon" type="image/png" href="assets/adung_studio_book_icon.png">
+
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "SoftwareApplication",
+          "@id": "https://adung.top/book.html#softwareapplication",
+          "name": "Adung Studio Book",
+          "applicationCategory": "MultimediaApplication",
+          "operatingSystem": "Windows 10, Windows 11 (64-bit)",
+          "offers": {
+            "@type": "Offer",
+            "price": "39",
+            "priceCurrency": "USD"
+          },
+          "description": "High-performance cinematic audio-visual audiobook and narrative production workstation powered by ElevenLabs Voice AI API.",
+          "url": "https://adung.top/book.html",
+          "publisher": {
+            "@type": "Organization",
+            "name": "Adung Studio",
+            "url": "https://adung.top/",
+            "founder": {
+              "@type": "Person",
+              "name": "Dung Duy",
+              "jobTitle": "Founder & Lead Developer",
+              "email": "founder@adung.top",
+              "sameAs": "https://www.linkedin.com/in/dung-duy-72a123442/"
+            }
+          }
+        }
+      ]
+    }
+    </script>
+
+    <style>
+        :root {
+            --bg: #0b0f19;
+            --bg-elevated: #111827;
+            --card-bg: rgba(17, 24, 39, 0.7);
+            --border: rgba(255, 255, 255, 0.08);
+            --border-hover: rgba(255, 255, 255, 0.18);
+            --amber: #f59e0b;
+            --amber-glow: rgba(245, 158, 11, 0.25);
+            --cyan: #06b6d4;
+            --cyan-glow: rgba(6, 182, 212, 0.25);
+            --text-main: #f3f4f6;
+            --text-muted: #9ca3af;
+            --text-dim: #6b7280;
+            --success: #10b981;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text-main);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Top Bar */
+        .top-bar {
+            background: linear-gradient(90deg, #1e1b4b, #311042, #1e1b4b);
+            border-bottom: 1px solid rgba(245, 158, 11, 0.2);
+            text-align: center;
+            padding: 10px 16px;
+            font-size: 13px;
+            font-weight: 500;
+            color: #fde68a;
+        }
+        .top-bar a {
+            color: #fff;
+            text-decoration: underline;
+            margin-left: 8px;
+            font-weight: 700;
+        }
+
+        /* Navbar */
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px 32px;
+            max-width: 1280px;
+            margin: 0 auto;
+            border-bottom: 1px solid var(--border);
+        }
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: #fff;
+            font-weight: 700;
+            font-size: 18px;
+        }
+        .nav-brand img {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+        }
+        .nav-badge {
+            background: rgba(245, 158, 11, 0.15);
+            color: var(--amber);
+            border: 1px solid rgba(245, 158, 11, 0.3);
+            font-size: 11px;
+            font-weight: 600;
+            padding: 2px 8px;
+            border-radius: 999px;
+            letter-spacing: 0.5px;
+        }
+        .nav-links {
+            display: flex;
+            gap: 24px;
+            list-style: none;
+        }
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover {
+            color: #fff;
+        }
+        .nav-cta {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+        .btn-outline {
+            border: 1px solid var(--border-hover);
+            color: var(--text-main);
+            padding: 8px 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+        .btn-outline:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: #fff;
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, #f59e0b, #d97706);
+            color: #000;
+            padding: 8px 18px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 700;
+            transition: all 0.2s;
+            box-shadow: 0 4px 14px var(--amber-glow);
+        }
+        .btn-primary:hover {
+            transform: translateY(-1px);
+            filter: brightness(1.1);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Hero */
+        .hero {
+            padding: 80px 0 60px;
+            text-align: center;
+            position: relative;
+        }
+        .hero-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(6, 182, 212, 0.1);
+            border: 1px solid rgba(6, 182, 212, 0.25);
+            color: var(--cyan);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 6px 14px;
+            border-radius: 999px;
+            margin-bottom: 24px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .hero h1 {
+            font-size: 46px;
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 20px;
+            background: linear-gradient(180deg, #ffffff 0%, #cbd5e1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .hero p {
+            font-size: 18px;
+            color: var(--text-muted);
+            max-width: 760px;
+            margin: 0 auto 36px;
+        }
+        .hero-btns {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            margin-bottom: 50px;
+        }
+        .hero-btns a {
+            padding: 12px 24px;
+            font-size: 15px;
+        }
+
+        /* Metrics Box */
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 16px;
+            margin-bottom: 80px;
+        }
+        .metric-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 20px;
+            text-align: left;
+            backdrop-filter: blur(12px);
+            transition: border-color 0.2s;
+        }
+        .metric-card:hover {
+            border-color: var(--amber);
+        }
+        .metric-label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-dim);
+            margin-bottom: 6px;
+            font-weight: 600;
+        }
+        .metric-val {
+            font-size: 24px;
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 4px;
+        }
+        .metric-desc {
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        /* Section Generic */
+        .section-header {
+            text-align: center;
+            max-width: 720px;
+            margin: 0 auto 50px;
+        }
+        .section-header h2 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: #fff;
+        }
+        .section-header p {
+            color: var(--text-muted);
+            font-size: 16px;
+        }
+
+        /* Architecture Deep Dive */
+        .arch-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 40px;
+            margin-bottom: 80px;
+            backdrop-filter: blur(16px);
+        }
+        .arch-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+        @media(max-width: 768px) {
+            .arch-grid { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 32px; }
+            nav .nav-links { display: none; }
+        }
+        .arch-item {
+            margin-bottom: 24px;
+        }
+        .arch-item h4 {
+            color: var(--amber);
+            font-size: 16px;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .arch-item p {
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        /* Console / Code Box */
+        .code-box {
+            background: #05070a;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 24px;
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+            font-size: 13px;
+            color: #e2e8f0;
+            line-height: 1.7;
+            overflow-x: auto;
+        }
+        .code-comment { color: #64748b; }
+        .code-keyword { color: #f59e0b; }
+        .code-str { color: #10b981; }
+
+        /* Features 3-Col */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
+            margin-bottom: 80px;
+        }
+        .feat-box {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 28px;
+            transition: all 0.2s;
+        }
+        .feat-box:hover {
+            border-color: rgba(245, 158, 11, 0.4);
+            transform: translateY(-2px);
+        }
+        .feat-icon {
+            font-size: 28px;
+            margin-bottom: 16px;
+            display: inline-block;
+        }
+        .feat-box h3 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+        .feat-box p {
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        /* Pricing Table */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin-bottom: 80px;
+        }
+        .price-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 32px 24px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+        }
+        .price-card.featured {
+            border-color: var(--amber);
+            background: linear-gradient(180deg, rgba(245, 158, 11, 0.08) 0%, rgba(17, 24, 39, 0.8) 100%);
+        }
+        .price-badge {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--amber);
+            color: #000;
+            font-size: 11px;
+            font-weight: 800;
+            padding: 3px 12px;
+            border-radius: 999px;
+            text-transform: uppercase;
+        }
+        .price-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 8px;
+        }
+        .price-val {
+            font-size: 36px;
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 4px;
+        }
+        .price-sub {
+            font-size: 13px;
+            color: var(--text-dim);
+            margin-bottom: 24px;
+        }
+        .price-features {
+            list-style: none;
+            margin-bottom: 28px;
+        }
+        .price-features li {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .price-features li::before {
+            content: "✓";
+            color: var(--success);
+            font-weight: 700;
+        }
+
+        /* Founder Section */
+        .founder-box {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 36px;
+            margin-bottom: 80px;
+            display: flex;
+            gap: 32px;
+            align-items: center;
+        }
+        @media(max-width: 640px) {
+            .founder-box { flex-direction: column; text-align: center; }
+        }
+        .founder-avatar {
+            width: 88px;
+            height: 88px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #f59e0b, #ec4899);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            font-weight: 800;
+            color: #fff;
+            flex-shrink: 0;
+            border: 2px solid var(--border-hover);
+        }
+        .founder-meta h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 4px;
+            color: #fff;
+        }
+        .founder-meta .role {
+            font-size: 14px;
+            color: var(--amber);
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        .founder-meta p {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 12px;
+        }
+        .founder-links a {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--cyan);
+            font-size: 13px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-right: 16px;
+        }
+        .founder-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* ElevenLabs Grants Badge Section */
+        .grants-banner {
+            background: linear-gradient(135deg, rgba(245, 158, 11, 0.05), rgba(6, 182, 212, 0.05));
+            border: 1px solid rgba(245, 158, 11, 0.3);
+            border-radius: 12px;
+            padding: 24px;
+            text-align: center;
+            margin-bottom: 80px;
+        }
+        .grants-banner h4 {
+            color: var(--amber);
+            font-size: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+        .grants-banner p {
+            font-size: 14px;
+            color: var(--text-muted);
+            max-width: 680px;
+            margin: 0 auto 12px;
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 40px 0;
+            text-align: center;
+            font-size: 13px;
+            color: var(--text-dim);
+        }
+        .footer-nav {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 16px;
+        }
+        .footer-nav a {
+            color: var(--text-muted);
+            text-decoration: none;
+        }
+        .footer-nav a:hover {
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Announcement Bar -->
+    <div class="top-bar">
+        <span>⚡ ADUNG STUDIO BOOK · ELEVENLABS STARTUP GRANTS PARTICIPANT · 33M HIGH-FIDELITY VOICE RUNWAY</span>
+        <a href="#voice-engine">Learn Architecture →</a>
+    </div>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="/book.html" class="nav-brand">
+            <img src="assets/adung_studio_book_icon.png" alt="Adung Studio Book Logo">
+            <span>Adung Studio Book</span>
+            <span class="nav-badge">v2.55.1 Native</span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="#overview">Overview</a></li>
+            <li><a href="#voice-engine">ElevenLabs Engine</a></li>
+            <li><a href="#workflow">Workflow</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#founder">Founder</a></li>
+            <li><a href="/">Main Studio</a></li>
+        </ul>
+        <div class="nav-cta">
+            <!--email_off-->
+            <a href="mailto:founder@adung.top?subject=Adung%20Studio%20Book%20Beta%20Inquiry" class="btn-outline">Contact Founder</a>
+            <!--/email_off-->
+            <a href="#pricing" class="btn-primary">Get Beta Access</a>
+        </div>
+    </nav>
+
+    <div class="container">
+
+        <!-- Hero Section -->
+        <section class="hero" id="overview">
+            <div class="hero-tag">● Audio-First Workstation for Authors & Storytellers</div>
+            <h1>Turn Manuscripts into Cinematic Audiobooks with Multi-Voice AI Acting</h1>
+            <p>
+                Adung Studio Book is a standalone Windows desktop suite designed for indie authors, podcasters, and historical documentary creators. Features an integrated hybrid voice pipeline combining local draft tokenization with the ElevenLabs Multilingual V3 & Conversational AI API for breathtaking emotional voice acting and ACX-compliant broadcast audio mastering.
+            </p>
+            <div class="hero-btns">
+                <!--email_off-->
+                <a href="mailto:founder@adung.top?subject=Request%20Adung%20Studio%20Book%20Trial" class="btn-primary">Request Windows Beta (.EXE)</a>
+                <!--/email_off-->
+                <a href="#voice-engine" class="btn-outline">Explore ElevenLabs Pipeline ↓</a>
+            </div>
+
+            <!-- In Numbers Bento Grid -->
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-label">Target Capacity</div>
+                    <div class="metric-val">33,000,000</div>
+                    <div class="metric-desc">Characters of high-fidelity voice runway via ElevenLabs Grant</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-label">Audio Mastering</div>
+                    <div class="metric-val">44.1 kHz</div>
+                    <div class="metric-desc">192 kbps broadcast MP3/WAV adhering to strict ACX/Audible standards</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-label">Performance</div>
+                    <div class="metric-val">&lt; 0.8s</div>
+                    <div class="metric-desc">Cold start timeline editor on Windows with zero electron overhead</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-label">Voice Pipeline</div>
+                    <div class="metric-val">Hybrid</div>
+                    <div class="metric-desc">Offline lightweight draft previews + ElevenLabs cloud master acting</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Voice Engine Deep Dive -->
+        <section id="voice-engine" style="margin-bottom: 80px;">
+            <div class="section-header">
+                <h2>Why ElevenLabs is the Core Engine of Adung Studio Book</h2>
+                <p>
+                    Long-form audiobook storytelling demands emotional tension, believable pacing, and distinct character identities that conventional local TTS engines cannot achieve.
+                </p>
+            </div>
+
+            <div class="arch-card">
+                <div class="arch-grid">
+                    <div>
+                        <div class="arch-item">
+                            <h4>🎙️ 1. Multi-Character Voice Casting Matrix</h4>
+                            <p>
+                                Authors assign persistent ElevenLabs Voice IDs across entire manuscript chapters. Protagonists, narrators, and secondary characters maintain identical vocal characteristics across 20+ hours of continuous audio.
+                            </p>
+                        </div>
+                        <div class="arch-item">
+                            <h4>⏱️ 2. Natural Pacing & Micro-Breath Punctuation</h4>
+                            <p>
+                                Automated text pre-processing balances sentence rhythm with micro-pauses (180ms comma breaths, 680ms paragraph pauses) avoiding the synthetic rush of generic speech generation.
+                            </p>
+                        </div>
+                        <div class="arch-item">
+                            <h4>🎭 3. Dynamic Emotion Modulation</h4>
+                            <p>
+                                Seamlessly switches tone from solemn historical exposition to rapid dialogue tension, whispers, and climactic revelations utilizing ElevenLabs Multilingual V3 prompting cues.
+                            </p>
+                        </div>
+                        <div class="arch-item">
+                            <h4>🎧 4. Broadcast & ACX Master Export</h4>
+                            <p>
+                                Built-in RMS loudness normalization (-23 dB to -18 dB), noise floor verification (&lt; -60 dB), and chapter ID3 tag generation compliant with Audible and Spotify requirements.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Code Box -->
+                    <div class="code-box">
+<span class="code-comment">// Adung Studio Book - ElevenLabs Pipeline Adapter</span>
+{
+  <span class="code-keyword">"project_id"</span>: <span class="code-str">"audiobook_chapter_04"</span>,
+  <span class="code-keyword">"voice_engine"</span>: <span class="code-str">"elevenlabs_multilingual_v3"</span>,
+  <span class="code-keyword">"characters"</span>: {
+    <span class="code-keyword">"narrator"</span>: { <span class="code-keyword">"voice_id"</span>: <span class="code-str">"Brian_Narrative_Deep"</span>, <span class="code-keyword">"stability"</span>: 0.65 },
+    <span class="code-keyword">"captain"</span>:  { <span class="code-keyword">"voice_id"</span>: <span class="code-str">"Marcus_Authoritative"</span>, <span class="code-keyword">"stability"</span>: 0.52 },
+    <span class="code-keyword">"historian"</span>:{ <span class="code-keyword">"voice_id"</span>: <span class="code-str">"Elena_Scholarly"</span>,    <span class="code-keyword">"stability"</span>: 0.70 }
+  },
+  <span class="code-keyword">"timeline_render"</span>: {
+    <span class="code-keyword">"output_format"</span>: <span class="code-str">"mp3_44100_192"</span>,
+    <span class="code-keyword">"acx_loudness_target_lufs"</span>: -19.5,
+    <span class="code-keyword">"micro_breath_insertion"</span>: <span class="code-keyword">true</span>,
+    <span class="code-keyword">"dynamic_sfx_mix"</span>: <span class="code-str">"enabled"</span>
+  }
+}
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- The 4-Step Workflow -->
+        <section id="workflow" style="margin-bottom: 80px;">
+            <div class="section-header">
+                <h2>From Raw Manuscript to Mastered Audiobook in 4 Steps</h2>
+                <p>Designed for writers, creators, and audio producers who value speed, quality, and complete creative control.</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feat-box">
+                    <span class="feat-icon">📄</span>
+                    <h3>01. Ingest & Tokenize</h3>
+                    <p>Import long-form manuscripts in Markdown, TXT, or DOCX. The parser automatically delineates dialogue tags from descriptive narrator prose.</p>
+                </div>
+                <div class="feat-box">
+                    <span class="feat-icon">👥</span>
+                    <h3>02. Cast Character Voices</h3>
+                    <p>Assign distinct ElevenLabs voice profiles to each character with granular controls over stability, emotional exaggeration, and vocal style.</p>
+                </div>
+                <div class="feat-box">
+                    <span class="feat-icon">🎛️</span>
+                    <h3>03. Pacing & Sound Design</h3>
+                    <p>Tune pauses, insert subtle foley (turning pages, background room tones, dramatic stings), and preview audio in real time on the timeline.</p>
+                </div>
+                <div class="feat-box">
+                    <span class="feat-icon">📦</span>
+                    <h3>04. ACX-Compliant Export</h3>
+                    <p>Batch render finished chapters into broadcast-ready WAV and MP3 with synchronized subtitle files (.SRT / .VTT) and embedded chapter art.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing & Commercial Viability -->
+        <section id="pricing" style="margin-bottom: 80px;">
+            <div class="section-header">
+                <h2>Transparent, Sustainable Licensing for Independent Creators</h2>
+                <p>A sustainable business model that converts grant experimentation into continuous high-volume ElevenLabs API consumption.</p>
+            </div>
+
+            <div class="pricing-grid">
+                <!-- Free Tier -->
+                <div class="price-card">
+                    <div>
+                        <div class="price-title">Community Preview</div>
+                        <div class="price-val">$0</div>
+                        <div class="price-sub">Local experimentation & draft mode</div>
+                        <ul class="price-features">
+                            <li>Local ONNX drafting engine</li>
+                            <li>Bring-Your-Own-Key (BYOK) API mode</li>
+                            <li>Single chapter export</li>
+                            <li>Standard MP3 output</li>
+                            <li>Community support via Discord</li>
+                        </ul>
+                    </div>
+                    <!--email_off-->
+                    <a href="mailto:founder@adung.top?subject=Community%20Tier" class="btn-outline" style="text-align: center;">Get Started Free</a>
+                    <!--/email_off-->
+                </div>
+
+                <!-- Creator Pro -->
+                <div class="price-card featured">
+                    <div class="price-badge">Most Popular for Authors</div>
+                    <div>
+                        <div class="price-title">Creator Pro</div>
+                        <div class="price-val">$39<span style="font-size: 16px; color: var(--text-dim);"> / mo</span></div>
+                        <div class="price-sub">For indie authors, podcasters & filmmakers</div>
+                        <ul class="price-features">
+                            <li>All Community features</li>
+                            <li>Integrated ElevenLabs Voice Acting</li>
+                            <li>Multi-character timeline casting</li>
+                            <li>Full book batch processing (50+ chapters)</li>
+                            <li>ACX Loudness Normalizer (-19 LUFS)</li>
+                            <li>Commercial distribution rights</li>
+                        </ul>
+                    </div>
+                    <!--email_off-->
+                    <a href="mailto:founder@adung.top?subject=Creator%20Pro%20Beta" class="btn-primary" style="text-align: center;">Start Pro Trial</a>
+                    <!--/email_off-->
+                </div>
+
+                <!-- Studio -->
+                <div class="price-card">
+                    <div>
+                        <div class="price-title">Studio Edition</div>
+                        <div class="price-val">$99<span style="font-size: 16px; color: var(--text-dim);"> / mo</span></div>
+                        <div class="price-sub">For digital publishers & audio agencies</div>
+                        <ul class="price-features">
+                            <li>All Creator Pro features</li>
+                            <li>Multi-seat workstation licensing</li>
+                            <li>Custom voice cloning profiles</li>
+                            <li>Priority cloud rendering pipeline</li>
+                            <li>Dedicated technical onboarding</li>
+                            <li>Direct SLA & API volume scaling</li>
+                        </ul>
+                    </div>
+                    <!--email_off-->
+                    <a href="mailto:founder@adung.top?subject=Studio%20Edition" class="btn-outline" style="text-align: center;">Contact Sales</a>
+                    <!--/email_off-->
+                </div>
+            </div>
+        </section>
+
+        <!-- Founder & Company Transparency -->
+        <section id="founder" style="margin-bottom: 80px;">
+            <div class="founder-box">
+                <div class="founder-avatar">D</div>
+                <div class="founder-meta">
+                    <h3>Dung Duy (Dao Duy Dung)</h3>
+                    <div class="role">Founder & Lead Software Engineer · Adung Studio</div>
+                    <p>
+                        Independent software builder based in Hanoi, Vietnam. Over 5 years of experience engineering high-performance media automation systems, native desktop applications, and video intelligence tools. Adung Studio Book is developed as an indie software workstation dedicated to empowering writers, filmmakers, and digital storytellers with broadcast-grade audio production tools without studio gatekeeping.
+                    </p>
+                    <div class="founder-links">
+                        <a href="https://www.linkedin.com/in/dung-duy-72a123442/" target="_blank" rel="noopener">LinkedIn Profile ↗</a>
+                        <a href="https://github.com/AdungApp" target="_blank" rel="noopener">GitHub Organization ↗</a>
+                        <!--email_off-->
+                        <a href="mailto:founder@adung.top">founder@adung.top</a>
+                        <!--/email_off-->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ElevenLabs Grants Cohort Badge -->
+        <section class="grants-banner">
+            <h4>🤝 ElevenLabs Startup Ecosystem</h4>
+            <p>
+                Adung Studio Book is proud to be built within the ElevenLabs Startup Grants Program. We are committed to displaying the official ElevenLabs Grants partner badge and expanding high-fidelity voice AI adoption across digital publishing.
+            </p>
+            <p style="font-size: 13px; color: var(--text-dim);">
+                Learn more about the program at <a href="https://elevenlabs.io/startup-grants" target="_blank" rel="noopener" style="color: var(--amber); text-decoration: underline;">elevenlabs.io/startup-grants</a>.
+            </p>
+        </section>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-nav">
+                <a href="/">Adung Studio Home</a>
+                <a href="/book.html">Adung Studio Book</a>
+                <a href="/privacy.html">Privacy Policy</a>
+                <a href="/terms.html">Terms of Service</a>
+                <a href="https://github.com/AdungApp" target="_blank" rel="noopener">GitHub</a>
+                <a href="https://www.linkedin.com/in/dung-duy-72a123442/" target="_blank" rel="noopener">LinkedIn</a>
+            </div>
+            <p style="margin-bottom: 8px;">
+                © 2024–2026 Adung Studio. All rights reserved. Registered under F6S Founder Network.
+            </p>
+            <p style="font-size: 12px; color: var(--text-dim); max-width: 600px; margin: 0 auto;">
+                Disclaimer: Adung Studio Book processes creator-selected original manuscripts and authorized content. Users are responsible for ensuring compliance with copyright and applicable publication terms.
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>
