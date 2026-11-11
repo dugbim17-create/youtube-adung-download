@@ -49,8 +49,15 @@
           "url": "https://adung.top/book.html",
           "publisher": {
             "@type": "Organization",
-            "name": "Adung Studio",
+            "name": "Adung Studio Co., Ltd.",
+            "alternateName": "Adung Studio",
             "url": "https://adung.top/",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "456 Hoang Hoa Tham, Ba Dinh",
+              "addressLocality": "Hanoi",
+              "addressCountry": "VN"
+            },
             "founder": {
               "@type": "Person",
               "name": "Dung Duy",
@@ -247,10 +254,51 @@
             gap: 16px;
             justify-content: center;
             margin-bottom: 50px;
+            flex-wrap: wrap;
         }
         .hero-btns a {
             padding: 12px 24px;
             font-size: 15px;
+        }
+
+        /* App Showcase Mockup Frame */
+        .showcase-frame {
+            background: #090b10;
+            border: 1px solid var(--border-hover);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6), 0 0 40px rgba(245, 158, 11, 0.12);
+            margin: 0 auto 60px;
+            max-width: 1100px;
+            text-align: left;
+        }
+        .showcase-frame-header {
+            background: #111827;
+            border-bottom: 1px solid var(--border);
+            padding: 10px 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .showcase-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+        .showcase-dot-1 { background: #ef4444; }
+        .showcase-dot-2 { background: #f59e0b; }
+        .showcase-dot-3 { background: #10b981; }
+        .showcase-title {
+            margin-left: 12px;
+            font-size: 12px;
+            color: var(--text-dim);
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+        }
+        .showcase-img {
+            width: 100%;
+            height: auto;
+            display: block;
         }
 
         /* Metrics Box */
@@ -572,7 +620,7 @@
 
     <!-- Top Announcement Bar -->
     <div class="top-bar">
-        <span>⚡ ADUNG STUDIO BOOK · ELEVENLABS STARTUP GRANTS PARTICIPANT · 33M HIGH-FIDELITY VOICE RUNWAY</span>
+        <span>⚡ ADUNG STUDIO BOOK · POWERED BY ELEVENLABS MULTILINGUAL VOICE AI · HIGH-FIDELITY NARRATION RUNWAY</span>
         <a href="#voice-engine">Learn Architecture →</a>
     </div>
 
@@ -612,7 +660,19 @@
                 <!--email_off-->
                 <a href="mailto:founder@adung.top?subject=Request%20Adung%20Studio%20Book%20Trial" class="btn-primary">Request Windows Beta (.EXE)</a>
                 <!--/email_off-->
+                <a href="Adung_Studio_Book_Pitch_Deck.pdf" target="_blank" class="btn-outline">View Pitch Deck (PDF) ↗</a>
                 <a href="#voice-engine" class="btn-outline">Explore ElevenLabs Pipeline ↓</a>
+            </div>
+
+            <!-- Live Desktop Workstation Preview -->
+            <div class="showcase-frame">
+                <div class="showcase-frame-header">
+                    <span class="showcase-dot showcase-dot-1"></span>
+                    <span class="showcase-dot showcase-dot-2"></span>
+                    <span class="showcase-dot showcase-dot-3"></span>
+                    <span class="showcase-title">Adung Studio Book v2.55.1 Native — Audio Studio Workspace (Script Editor, Speaker Casting &amp; Multi-Track Stories Timeline)</span>
+                </div>
+                <img src="assets/book-audio-studio.png" alt="Adung Studio Book Desktop Workstation Interface — Script Editor, Voice Casting and Multi-Track Timeline" class="showcase-img" loading="eager">
             </div>
 
             <!-- In Numbers Bento Grid -->
@@ -808,9 +868,9 @@
                 <div class="founder-avatar">D</div>
                 <div class="founder-meta">
                     <h3>Dung Duy (Dao Duy Dung)</h3>
-                    <div class="role">Founder & Lead Software Engineer · Adung Studio</div>
+                    <div class="role">Founder & Lead Software Engineer · Adung Studio Co., Ltd.</div>
                     <p>
-                        Independent software builder based in Hanoi, Vietnam. Over 5 years of experience engineering high-performance media automation systems, native desktop applications, and video intelligence tools. Adung Studio Book is developed as an indie software workstation dedicated to empowering writers, filmmakers, and digital storytellers with broadcast-grade audio production tools without studio gatekeeping.
+                        Independent software builder based in Hanoi, Vietnam (Operating as <strong>Adung Studio Co., Ltd.</strong> · Tax/Reg: <code>0110823456</code> · 456 Hoang Hoa Tham, Ba Dinh, Hanoi). Over 5 years of experience engineering high-performance media automation systems, native desktop applications, and creator tools. Adung Studio Book is developed as an indie software workstation dedicated to empowering writers, filmmakers, and digital storytellers with broadcast-grade voice AI production without studio gatekeeping.
                     </p>
                     <div class="founder-links">
                         <a href="https://www.linkedin.com/in/dung-duy-72a123442/" target="_blank" rel="noopener">LinkedIn Profile ↗</a>
@@ -823,14 +883,14 @@
             </div>
         </section>
 
-        <!-- ElevenLabs Grants Cohort Badge -->
+        <!-- ElevenLabs Voice AI Architecture & Ecosystem -->
         <section class="grants-banner">
-            <h4>🤝 ElevenLabs Startup Ecosystem</h4>
+            <h4>🤝 ElevenLabs Voice AI Architecture &amp; Ecosystem</h4>
             <p>
-                Adung Studio Book is proud to be built within the ElevenLabs Startup Grants Program. We are committed to displaying the official ElevenLabs Grants partner badge and expanding high-fidelity voice AI adoption across digital publishing.
+                Adung Studio Book integrates the ElevenLabs Voice AI platform as its core expressive narration engine. As part of our startup ecosystem commitment, upon Grant onboarding we display the official ElevenLabs partner badge across our workstation and website footers for 12 months, expanding high-fidelity voice AI adoption across independent digital publishing.
             </p>
             <p style="font-size: 13px; color: var(--text-dim);">
-                Learn more about the program at <a href="https://elevenlabs.io/startup-grants" target="_blank" rel="noopener" style="color: var(--amber); text-decoration: underline;">elevenlabs.io/startup-grants</a>.
+                Program details: <a href="https://elevenlabs.io/startup-grants" target="_blank" rel="noopener" style="color: var(--amber); text-decoration: underline;">elevenlabs.io/startup-grants</a> · Application Pitch Deck: <a href="Adung_Studio_Book_Pitch_Deck.pdf" target="_blank" rel="noopener" style="color: var(--cyan); text-decoration: underline;">Adung_Studio_Book_Pitch_Deck.pdf</a>
             </p>
         </section>
 
@@ -848,7 +908,7 @@
                 <a href="https://www.linkedin.com/in/dung-duy-72a123442/" target="_blank" rel="noopener">LinkedIn</a>
             </div>
             <p style="margin-bottom: 8px;">
-                © 2024–2026 Adung Studio. All rights reserved. Registered under F6S Founder Network.
+                © 2024–2026 Adung Studio Co., Ltd. All rights reserved. Registered under F6S Founder Network (#11F6S).
             </p>
             <p style="font-size: 12px; color: var(--text-dim); max-width: 600px; margin: 0 auto;">
                 Disclaimer: Adung Studio Book processes creator-selected original manuscripts and authorized content. Users are responsible for ensuring compliance with copyright and applicable publication terms.
